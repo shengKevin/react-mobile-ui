@@ -1,0 +1,75 @@
+.mui-switch {
+    position: relative;
+    width: 52px;
+    height: 32px;
+    border: 1px solid #dfdfdf;
+    outline: 0;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    transition: background-color .1s, border.1s;
+    -webkit-transition: background-color .1s, border.1s;
+    -moz-transition: background-color .1s, border.1s;
+    -ms-transition: background-color .1s, border.1s;
+    -o-transition: background-color .1s, border.1s;
+    appearance: none;
+}
+
+.mui-switch:checked {
+    background-color: #04BE02;
+    border-color: #04BE02;
+}
+
+/* .mui-switch::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:50px;
+    height: 30px;
+    border-radius: 15px ;
+    -webkit-border-radius: 15px ;
+    -moz-border-radius: 15px ;
+    -ms-border-radius: 15px ;
+    -o-border-radius: 15px ;
+    background-color: #FDFDFD;
+    transition: transform .35s;
+    -webkit-transition: transform .35s;
+    -moz-transition: transform .35s;
+    -ms-transition: transform .35s;
+    -o-transition: transform .35s;
+} */
+
+.mui-switch::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    /* border: 1px solid #dfdfdf; */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    border-radius: 15px ;
+    -webkit-border-radius: 15px ;
+    -moz-border-radius: 15px ;
+    -ms-border-radius: 15px ;
+    -o-border-radius: 15px ;
+    background: #ffffff;
+    transition: transform .35s;
+    -webkit-transition: transform .35s;
+    -moz-transition: transform .35s;
+    -ms-transition: transform .35s;
+    -o-transition: transform .35s;
+}
+
+.mui-switch:checked::after {
+    transform: translateX(20px);
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    -o-transform: translateX(20px);
+}

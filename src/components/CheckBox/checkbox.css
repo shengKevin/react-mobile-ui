@@ -1,0 +1,75 @@
+.mui-input-checkbox {
+    position: absolute;
+    display: none;
+}
+
+.mui-input-checkbox+label {
+    display: block;
+    position: relative;
+    cursor: default;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+}
+
+.mui-input-checkbox[disabled] {
+    cursor: not-allowed;
+}
+
+.mui-input-checkbox[disabled] + label::before {
+    background: #DCDCDC;
+    opacity: .4;
+}
+
+.mui-input-checkbox+label::before {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    content: "";
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    margin-left: 6px;
+    border: 1px #cccccc solid;
+    background-color: white; 
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+}
+.mui-input-checkbox+label::after {
+    position: absolute;
+    top: 6px;
+    left: 14px;
+    width: 6px;
+    height: 12px;
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    transform: rotate(45deg);
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-top: 0;
+    border-left: 0;
+    content: '';
+    display: none;
+}
+
+input[type="checkbox"]:checked+label::before{
+    border: #FF5A10;
+    background: #FF5A10;
+}
+
+input[type="checkbox"]:disabled+label::before{
+    border: black;
+    background: #DCDCDC;
+}
+
+input[type="checkbox"]:checked+label::after{
+    display: block;
+}
+
+/* .myui-cell:active {
+    opacity: .2;
+    background: #cccccc;
+} */
