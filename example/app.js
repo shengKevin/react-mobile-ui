@@ -10,10 +10,10 @@ import { Button, Chexkbox, Accordion, Icon, Cell } from '../src/index';
 // import '../build/dist/react-mui.css';
 import './app.less';
 
-// window.addEventListener('load', () => {
-//   const body = document.body || document.documentElement;
-//   FastClick.attach(body);
-// });
+window.addEventListener('load', () => {
+  const body = document.body || document.documentElement;
+  FastClick.attach(body);
+});
 
 const route = [
   { path: '', component: '' },
