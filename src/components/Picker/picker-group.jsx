@@ -17,7 +17,7 @@ class PickerGroup extends React.Component {
     if (activeIndex !== nextactive) {
       this.setState({
         translate: -nextactive * itemheight,
-      })
+      });
     }
     if (data.length > nextProps.data.length) {
       const { translate } = this.state;

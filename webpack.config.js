@@ -99,6 +99,12 @@ const rules = [
   {
     test: /\.(png|gif|jpg|svg)$/,
     use: 'url-loader?limit=20480&name=assets/[name]-[hash].[ext]',
+  }, {
+    test: /\.md$/,
+    loader: 'raw-loader'
+  }, {
+    test: /\.json$/,
+    loader: 'json-loader'
   }
 ];
 
@@ -145,7 +151,7 @@ module.exports = {
     rules,
   },
   resolve: {
-    extensions: ['.loader.js', '.js', '.jsx', '.less'],
+    extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx', '.less'],
     modules: [
       path.resolve(__dirname, 'node_modules'),
       jsSourcePath,
@@ -155,7 +161,7 @@ module.exports = {
   devServer: {
     contentBase: isProduction ? buildPath : jsSourcePath,
     historyApiFallback: true,
-    port: 8000,
+    port: isDocs ? 8000 : 3000,
     compress: isProduction,
     inline: !isProduction,
     hot: !isProduction,

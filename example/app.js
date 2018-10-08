@@ -1,33 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import FastClick from 'fastclick';
+// import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import FastClick from 'fastclick';
 import 'babel-polyfill';
-import '../build/dist/verdor';
-// import { Button, Chexkbox } from '../build/dist/react-mui';
-import { Button, Chexkbox, Accordion, Icon, Cell } from '../src/index';
-// import { Button } from '../build/lib/Button'; 
-// import '../build/dist/react-mui.css';
+import { Button, Chexkbox, Accordion, Icon, Cell } from '../src';
 import './app.less';
+
+// document.addEventListener('touchmove', (e) => {
+//   e.preventDefault();
+// }, { passive: false });
 
 // window.addEventListener('load', () => {
 //   const body = document.body || document.documentElement;
 //   FastClick.attach(body);
 // });
-
-const route = [
-  { path: '', component: '' },
-];
-
-// const App = (props) => {
-//   return (
-//     <div className="app">
-//       <Button>test</Button>
-//       <Chexkbox name="1">test</Chexkbox>
-//       <Chexkbox name="checkbox" value="one checkbox" checked={checked} />
-//     </div>
-//   );
-// };
 
 class App extends React.Component {
   state = {
