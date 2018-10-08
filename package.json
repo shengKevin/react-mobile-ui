@@ -7,6 +7,8 @@
     "start": "webpack-dev-server --color --config ./webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack.config.js",
     "build:lib": "webpack --config ./webpack.config.lib.js",
+    "start:doc": "webpack-dev-server --color docs=true  true --config ./webpack.config.js",
+    "build:doc": "cross-env NODE_ENV=production docs=true webpack --config ./webpack.config.js",
     "lint": "eslint ./src/components ./example",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

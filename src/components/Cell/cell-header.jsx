@@ -8,8 +8,8 @@ import './cell.css';
 const CellHeader = (props) => {
   const { className, children, primary, ...others } = props;
   const cls = classNames({
-    'myui-cell-header': true,
-    'myui-cell-primary': primary,
+    'mui-cell-header': true,
+    'mui-cell-primary': primary,
     [className]: className,
   });
 

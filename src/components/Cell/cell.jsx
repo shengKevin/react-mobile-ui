@@ -13,9 +13,9 @@ const Cell = (props) => {
   const CellComponent = component || DefaultComponent;
     
   const cls = classNames({
-    'myui-cell': true,
-    'myui-cell-before': cellbefore,
-    'myui-cell-after': cellafter,
+    'mui-cell': true,
+    'mui-cell-before': cellbefore,
+    'mui-cell-after': cellafter,
     [className]: className
   });
 

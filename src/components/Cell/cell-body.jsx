@@ -6,8 +6,8 @@ import classNames from '../../utils/classnames';
 const CellBody = (props) => {
   const { className, children, primary, ...others} = props;
   const cls = classNames({
-    'myui-cell-body': true,
-    'myui-body-primary': primary,
+    'mui-cell-body': true,
+    'mui-body-primary': primary,
     [className]: className,
   });
 

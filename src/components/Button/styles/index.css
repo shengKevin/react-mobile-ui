@@ -6,7 +6,7 @@ button {
     -webkit-appearance: none;
 }
 
-.myui-btn {
+.mui-btn {
     position: relative;
     display: block;
     margin-left: auto;
@@ -25,24 +25,24 @@ button {
     overflow: hidden;
 }
 
-.myui-btn:active {
+.mui-btn:active {
     opacity: .6;
 }
 
-.myui-btn-primary {
+.mui-btn-primary {
     background-color: #FF5A10;
 }
 
-.myui-btn-default {
+.mui-btn-default {
     background-color: #F8F8F8;
     color: #000000
 }
 
-.myui-btn-warning {
+.mui-btn-warning {
     background-color: #e94f4f;
 }
 
-.myui-btn-small {
+.mui-btn-small {
     display: inline-block;
     padding: 0 1.32em;
     line-height: 2.3;
@@ -50,7 +50,7 @@ button {
     width: 30%
 }
 
-.myui-btn-disabled {
+.mui-btn-disabled {
     background-color: #DCDCDC;
     color: white;
 }

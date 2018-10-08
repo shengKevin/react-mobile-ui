@@ -7,12 +7,12 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const { join } = path;
 
+const isDocs = !!process.env.docs;
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isProduction = nodeEnv === 'production';
 
-const jsSourcePath = join(__dirname, 'example');
-const buildPath = join(__dirname, 'build/example');
-const sourcePath = join(__dirname, 'example');
+const jsSourcePath = join(__dirname, isDocs ? 'docs' : 'example');
+const buildPath = join(__dirname, isDocs ? 'build/docs' : 'build/example');
 
 // Common plugins
 const plugins = [
@@ -31,7 +31,7 @@ const plugins = [
   }),
   new webpack.NamedModulesPlugin(),
   new HtmlWebpackPlugin({
-    template: join(sourcePath, 'index.html'),
+    template: join(jsSourcePath, 'index.html'),
     path: buildPath,
     filename: 'index.html',
   }),
@@ -126,7 +126,7 @@ if (!isProduction) {
       },
     })
   );
-  plugins.push(new CleanWebpackPlugin(['build/example']));
+  plugins.push(new CleanWebpackPlugin([isDocs ? 'build/docs' : 'build/example']));
   plugins.push(new BundleAnalyzerPlugin());
 }
 
@@ -153,7 +153,7 @@ module.exports = {
   },
   plugins,
   devServer: {
-    contentBase: isProduction ? buildPath : sourcePath,
+    contentBase: isProduction ? buildPath : jsSourcePath,
     historyApiFallback: true,
     port: 8000,
     compress: isProduction,

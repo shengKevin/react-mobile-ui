@@ -124,7 +124,7 @@ class Input extends PureComponent {
       const { className, label, placeholder, type, clear, defaultValue, value, onChange, rules, valuerules,  ...others } = this.props;
       const { _value, _clear } = this.state;
       const cls = classNames({
-        'myui-cell': false,
+        'mui-cell': false,
         [className]: className
       });
       const icls = classNames({
@@ -137,7 +137,7 @@ class Input extends PureComponent {
             <Label>{label}</Label>
           </CellHeader>
           <CellBody>
-            <input className="myui-input"
+            <input className="mui-input"
               value={_value}
               placeholder={placeholder}
               onChange={this.handlerOnChange}
