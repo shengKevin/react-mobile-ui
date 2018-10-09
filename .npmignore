@@ -1,2 +1,4 @@
-#IDE
 .vscode
+.vscode/
+*.log
+.DS_Store

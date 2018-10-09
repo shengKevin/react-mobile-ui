@@ -1,3 +1,4 @@
+@import '~highlight.js/styles/atom-one-dark.css';
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,39 @@ ul{
 .app {
   text-align: center;
   color: #333333;
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1Px solid #e9e9e9;
+    width: 100%;
+    margin-bottom: 24Px;
+    thead {
+      display: table-header-group;
+      vertical-align: middle;
+      border-color: inherit;
+      background-color: #F7F7F7;
+    }
+    tr {
+      display: table-row;
+      vertical-align: inherit;
+      border-color: inherit;
+    }
+    tbody {
+      display: table-row-group;
+      vertical-align: middle;
+      border-color: inherit;
+    }
+  td {
+    border: 1Px solid #e9e9e9;
+    padding: 8Px 16Px;
+    text-align: left;
+    }
+  }
+  .mobile-page {
+    width: 375px;
+    height: 667px;
+  }
 }
 html::-webkit-scrollbar {
   display: none;

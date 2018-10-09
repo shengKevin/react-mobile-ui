@@ -6,11 +6,11 @@ Web mobile components with react
 
 Please read the [documentation](https://shengkevin.github.io/react-mui/)
 
-## Use
+## Installing
 
 npm install react-mui --save-dev
 
-## Example
+## Use example
 
 ```javascript
 // app.js
@@ -31,7 +31,7 @@ ReactDOM.render((
 
 Please commit [issues](https://github.com/shengKevin/react-mui/issues)
 
-## Dir
+## Project analysis
 
 ```
 
@@ -61,3 +61,11 @@ Please commit [issues](https://github.com/shengKevin/react-mui/issues)
 └── webpack.config.lib.js   // build lib
 
 ```
+### docs
+start: npm run doc
+build: npm run build:doc
+### example
+start: npm start
+build: npm run build
+### lib
+npm run build:lib
