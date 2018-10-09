@@ -9,8 +9,6 @@
     "build:lib": "webpack --config ./webpack.config.lib.js",
     "doc": "cross-env docs=true webpack-dev-server --color --config ./webpack.config.js",
     "build:doc": "cross-env NODE_ENV=production docs=true webpack --config ./webpack.config.js",
-    "predeploy": "npm run build:doc",
-    "deploy": "gh-pages -d build",
     "lint": "eslint ./src/components ./example",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,8 +28,7 @@
   ],
   "author": "LiuSheng",
   "license": "ISC",
-  "private": true,
-  "homepage": "https://shengkevin.github.io/react-mui",
+  "homepage": "https://github.com/shengKevin/react-mui",
   "bugs": {
     "url": "https://github.com/shengKevin/react-mui/issues"
   },
