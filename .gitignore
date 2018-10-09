@@ -3,6 +3,7 @@
 
 # production
 /build/dist
+/build/example
 /build/lib
 
 # misc
@@ -11,6 +12,8 @@
 .env.development.local
 .env.test.local
 .env.production.local
+npm-debug.log
+publish.sh
 
 #logs
 npm-debug.log*
@@ -20,6 +23,7 @@ logs
 
 #IDE
 .vscode
+.idea
 
 
 
