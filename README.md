@@ -6,11 +6,11 @@ Web mobile components with react
 
 Please read the [documentation](https://shengkevin.github.io/react-mui/)
 
-## use
+## Use
 
 npm install react-mui --save-dev
 
-## example
+## Example
 
 ```javascript
 // app.js
@@ -27,12 +27,37 @@ ReactDOM.render((
 
 ```
 
-## bug
+## Bug
 
 Please commit [issues](https://github.com/shengKevin/react-mui/issues)
 
-## Project analysis
+## Dir
 
-await ...
+```
 
+├── build
+│   ├── dist
+│   ├── docs
+│   ├── example
+│   └── lib
+├── docs
+│   ├── app.js
+│   ├── app.less
+│   ├── docs.md
+│   ├── index.html
+│   └── index.js
+├── example
+│   ├── app.js
+│   ├── app.less
+│   ├── example.md
+│   ├── index.html
+│   └── index.js
+├── src
+│   ├── components
+│   ├── index.js
+│   ├── utils
+│   └── version.js
+├── webpack.config.js       // docs and exmple
+└── webpack.config.lib.js   // build lib
 
+```

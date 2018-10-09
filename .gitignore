@@ -4,7 +4,6 @@
 # production
 /build/dist
 /build/lib
-/build/example
 
 # misc
 .DS_Store
