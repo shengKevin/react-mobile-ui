@@ -3,6 +3,7 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const { join } = path;
@@ -117,6 +118,7 @@ if (!isProduction) {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
+        drop_console: true,
         screw_ie8: true,
         conditionals: true,
         unused: true,
@@ -129,6 +131,7 @@ if (!isProduction) {
       },
       output: {
         comments: false,
+        beautify: false,
       },
     })
   );

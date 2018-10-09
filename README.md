@@ -1,10 +1,10 @@
-# React-Mui
+# React-mui
 
 Web mobile components with react
 
 ## Doc
 
-[documentation](https://shengkevin.github.io/react-mui/)
+Please read the [documentation](https://shengkevin.github.io/react-mui/)
 
 ## use
 
