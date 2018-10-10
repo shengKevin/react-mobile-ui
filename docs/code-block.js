@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types'; 
-import hljs from 'highlight.js';
+// import hljs from 'highlight.js';
+const hljs = window.hljs;
 
 class CodeBlock extends React.PureComponent {
   constructor(props) {

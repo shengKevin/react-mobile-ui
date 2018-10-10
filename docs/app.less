@@ -1,4 +1,4 @@
-@import '~highlight.js/styles/atom-one-dark.css';
+// @import '~highlight.js/styles/atom-one-dark.css';
 * {
   margin: 0;
   padding: 0;
@@ -53,4 +53,30 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-  
+.panel {
+  position: relative;
+  height: 100%;
+  .view-content {
+    width: 100%;
+    height: 100%;
+    .mobile-view {
+      width: 375px;
+      height: 667px;
+      background: #cccccc;
+      position: relative;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      .page {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        z-index: 1;
+      }
+    }
+  }
+    
+}

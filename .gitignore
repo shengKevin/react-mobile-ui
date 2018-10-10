@@ -3,8 +3,8 @@
 
 # production
 /build/dist
-/build/example
 /build/lib
+# /build/example
 
 # misc
 .DS_Store
