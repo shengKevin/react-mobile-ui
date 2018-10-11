@@ -62,10 +62,12 @@ Please commit [issues](https://github.com/shengKevin/react-mui/issues)
 
 ```
 ### docs
-start: npm run doc \n\n
+start: npm run doc
+
 build: npm run build:doc
 ### example 
-start: npm start \n\n
+start: npm start
+
 build: npm run build 
 ### lib
 npm run build:lib
