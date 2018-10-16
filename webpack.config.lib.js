@@ -146,10 +146,10 @@ const libEntry = (() => {
 const webpackConfig = {
   devtool: 'source-map',
   context: libSourcePath,
-  externals: {
-    'react': 'react',
-    'react-dom': 'ReactDOM'
-  },
+  // externals: {
+  //   'react': 'react',
+  //   'react-dom': 'ReactDOM'
+  // },
   module: {
     rules,
   },

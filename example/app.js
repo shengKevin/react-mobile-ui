@@ -1,66 +1,65 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { 
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
 // import FastClick from 'fastclick';
 import 'babel-polyfill';
-import { Button, Chexkbox, Accordion, Icon, Cell } from '../src';
+import {
+  Home,
+  ButtonDemo,
+  CellDemo,
+  BlankDemo,
+  ActionSheetDemo,
+  ChexkboxDemo,
+  FlexDemo,
+  InputDemo,
+  ModalDemo,
+  PickerDemo,
+  SwitchDemo,
+  RadioDemo,
+  AccordionDemo,
+  IconDemo,
+} from './pages';
 import './app.less';
-
-// document.addEventListener('touchmove', (e) => {
-//   e.preventDefault();
-// }, { passive: false });
 
 // window.addEventListener('load', () => {
 //   const body = document.body || document.documentElement;
 //   FastClick.attach(body);
 // });
 
+const routers = [
+  {path: '/', component: Home, exact: true},
+  {path: '/button', component: ButtonDemo},
+  {path: '/cell', component: CellDemo},
+  {path: '/blank', component: BlankDemo},
+  {path: '/actionsheet', component: ActionSheetDemo},
+  {path: '/checkbox', component: ChexkboxDemo},
+  {path: '/input', component: InputDemo},
+  {path: '/flex', component: FlexDemo},
+  {path: '/modal', component: ModalDemo},
+  {path: '/picker', component: PickerDemo},
+  {path: '/switch', component: SwitchDemo},
+  {path: '/radio', component: RadioDemo},
+  {path: '/accordion', component: AccordionDemo},
+  {path: '/icon', component: IconDemo},
+  
+];
+
 class App extends React.Component {
-  state = {
-    checked: false,
-  };
-
-  accordionChange = (activeKeys) => {
-    console.log(activeKeys);
-  }
-
   render() {
-    const { checked } = this.state;
     return (
-      <div className="app">
-        <Button>test</Button>
-        <Chexkbox name="1" disabled>test</Chexkbox>
-        <Chexkbox name="checkbox" 
-          value="one checkbox"
-          checked={checked}
-          onChange={(check) => { this.setState({checked: check}); }}
-        />
-        <Accordion defaultActiveKeys={['0']} onChange={this.accordionChange} style={{ paddingTop: 20}}>
-          <Accordion.Panel header="Data Entry">
-            <Cell cellafter style={{ textAlign: 'left' }}>text text text text text text text text text text text </Cell>
-          </Accordion.Panel>
-          <Accordion.Panel header="Layout">
-            <Cell><Icon type="icon-like" /></Cell>
-            <Cell><Icon type="icon-home" /></Cell>
-            <Cell><Icon type="icon-skin" /></Cell>
-          </Accordion.Panel>
-          <Accordion.Panel header="Data Display">
-            <Cell><Icon type="icon-like" /></Cell>
-            <Cell><Icon type="icon-home" /></Cell>
-            <Cell><Icon type="icon-skin" /></Cell>
-          </Accordion.Panel>
-          <Accordion.Panel header="Navigation">
-            <Cell><Icon type="icon-like" /></Cell>
-            <Cell><Icon type="icon-home" /></Cell>
-            <Cell><Icon type="icon-skin" /></Cell>
-          </Accordion.Panel>
-          <Accordion.Panel header="Feedback">
-            <Cell><Icon type="icon-like" /></Cell>
-            <Cell><Icon type="icon-home" /></Cell>
-            <Cell><Icon type="icon-skin" /></Cell>
-          </Accordion.Panel>
-        </Accordion>
-      </div>
+      <Router>
+        <Switch>
+          {
+            routers.map(({path, component, exact}) => (
+              <Route key={path} path={path} component={component} exact={exact} />
+            ))
+          }
+        </Switch>
+      </Router>
     );
   }
 }

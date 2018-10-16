@@ -1,47 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SplitPane from 'react-split-pane';
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Markdown from 'react-markdown';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import 'babel-polyfill';
-import './app.less';
-import { Button, ActionSheet } from '../src';
+import lib from '../src/index';
+import { Menu } from './components/Menu';
 import CodeBlock from './code-block';
-import initialSource from './docs.md';
+import './app.less';
+import { CellBody } from '../src/components/Cell';
+const btnMark = require('../src/components/Button/index.md');
+const { Cell } = lib;
 
-
-const Markdown = require('react-markdown');
+// const routers = [
+//   { path: '/Accordion', component: Accordion },
+//   { path: '/button', component: Button },
+//   { path: '/button', component: Button },
+//   { path: '/button', component: Button },
+//   { path: '/button', component: Button },
+//   { path: '/button', component: Button },
+//   { path: '/button', component: Button },
+//   { path: '/button', component: Button },
+//   { path: '/button', component: Button },
+//   { path: '/button', component: Button },
+//   { path: '/button', component: Button },
+// ];
 
 class App extends React.Component {
 
-  state = {
-    ios_show: false,
-    menus: [
-      {
-        label: 'Option 1',
-        onClick: e=> this.setState({ios_show: false})
-      }, 
-      {
-        label: 'Option 2',
-        onClick: e=> this.setState({ios_show: false})
-      }],
-    actions: [
-      {
-        label: 'Cancel',
-        onClick: this.hide
-      }
-    ],
-    title: 'this is actionsheet title',
-  };
+  handleMenuChange = (key) => {
+    console.log(key);
+  }
 
   render() {
     return (
       <div className="app">
-        <p>Welcome react-mui docs</p>
-        {/* <Markdown
-          source={initialSource}
-          renderers={{code: CodeBlock}}
-        /> */}
-        <p>敬请等待...</p>
+        <Cell style={{background: '#FF5A10', color: '#fff'}}><CellBody>react-mui docs</CellBody></Cell>
+        <Menu onClick={this.handleMenuChange} style={{background: '#f5f5f5'}}>
+          <Menu.Item key="1">选项一</Menu.Item>
+          <Menu.Item key="2">选项二</Menu.Item>
+          <Menu.Item key="3">选项三</Menu.Item>
+          <Menu.Item key="4">选项四</Menu.Item>
+          <Menu.Item key="5">选项五</Menu.Item>
+          <Menu.Item key="6">选项六</Menu.Item>
+        </Menu>
+        {/* <div>
+          <Markdown
+            source={btnMark}
+            renderers={{code: CodeBlock}}
+          />
+        </div> */}
+        {/* <iframe src="https://shengkevin.github.io/react-mui/index.html"></iframe> */}
       </div>
     );
   }

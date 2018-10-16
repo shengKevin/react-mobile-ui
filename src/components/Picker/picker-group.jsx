@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from '../../utils/classnames';
-import './picker-group.css';
+import './picker-group.less';
 
 class PickerGroup extends React.Component {
   state = {

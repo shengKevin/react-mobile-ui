@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Mask } from '../Mask';
 import PickerGroup from './picker-group.jsx';
 import classNames from '../../utils/classnames';
-import './index.css';
+import './index.less';
 
 class CascadePicker extends React.Component {
 
@@ -42,7 +42,7 @@ class CascadePicker extends React.Component {
         group.push(others);
         if (index !== nextIndex) {
           if (children.length) {
-            this.findGroup(children, index, ++nextIndex);
+            this.findGroup(children, index, nextIndex += 1);
           }
         }
       }

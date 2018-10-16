@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from '../../utils/classnames';
-import './index.css';
+import './index.less';
 
 const Switch = (props) => {
   const { className, ...others } = props;

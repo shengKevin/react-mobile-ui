@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Mask } from '../Mask';
-import PickerGroup from './picker-group';
+import PickerGroup from './picker-group.jsx';
 import classNames from '../../utils/classnames';
-import './index.css';
+import './index.less';
 
 class Picker extends React.Component {
 
@@ -15,7 +15,7 @@ class Picker extends React.Component {
     initState = () => {
       const { data } = this.props;
       const state = {};
-      for (let i = 0; i < data.length; i++) {
+      for (let i = 0; i < data.length; i += 1) {
         state[`groupValue${i}`] = {
           value: data[i][0],
           index: 0,
@@ -43,7 +43,7 @@ class Picker extends React.Component {
         const gv = this.state[key] || {};
         const v = gv.value || {};
         completeValue.push(v);
-        value.push(v.value)
+        value.push(v.value);
       }
       return { completeValue, value };
     }
@@ -70,17 +70,17 @@ class Picker extends React.Component {
       const curValue = { value, index };
       state[`groupValue${key}`] = curValue;
       this.setState(state, () => {
-        const { value:select } = this.getValue();
+        const { value: select } = this.getValue();
         this.props.onChange && this.props.onChange(value, index, key, select);
       });
     }
 
     findLabel(data, value) {
       const svalue = [];
-      for (let i = 0; i < value.length; i++) {
+      for (let i = 0; i < value.length; i += 1) {
         if (data[i] instanceof Array) {
           const obj = data[i].find(item => item.value === value[i]) || {};
-          svalue.push(obj.label)
+          svalue.push(obj.label);
         }
       }
       return svalue;
@@ -88,7 +88,7 @@ class Picker extends React.Component {
 
     findActiveIndex(data, value) {
       const svalue = [];
-      for (let i = 0; i < value.length; i++) {
+      for (let i = 0; i < value.length; i += 1) {
         if (data[i] instanceof Array) {
           const index = data[i].findIndex(item => item.value === value[i]);
           svalue.push(index);

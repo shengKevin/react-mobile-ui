@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Cell, CellBody, CellFooter } from '../Cell';
 import classnames from '../../utils/classnames';
-import './radio.css';
+import './radio.less';
 
 class Radio extends PureComponent {
 

@@ -6,6 +6,10 @@ Web mobile components with react
 
 Please read the [documentation](https://shengkevin.github.io/react-mui/)
 
+## Demo
+
+Please read the [demo](https://shengkevin.github.io/react-mui/)
+
 ## Installing
 
 npm install react-mui --save-dev
@@ -31,7 +35,26 @@ ReactDOM.render((
 
 Please commit [issues](https://github.com/shengKevin/react-mui/issues)
 
-## Project analysis
+## Development
+
+```js
+
+  git clone https://github.com/shengKevin/react-mui.git
+  cd react-mui
+  // docs
+    start: npm run doc 
+    
+    build: npm run build:doc
+  // example 
+    start: npm start
+
+    build: npm run build 
+  // lib
+    npm run build:lib   
+
+```
+
+## Dir
 
 ```
 
@@ -61,11 +84,3 @@ Please commit [issues](https://github.com/shengKevin/react-mui/issues)
 └── webpack.config.lib.js   // build lib
 
 ```
-### docs
-start: npm run doc \n\n
-build: npm run build:doc
-### example 
-start: npm start \n\n
-build: npm run build 
-### lib
-npm run build:lib
