@@ -83,4 +83,16 @@ Please commit [issues](https://github.com/shengKevin/react-mui/issues)
 ├── webpack.config.js       // docs and exmple
 └── webpack.config.lib.js   // build lib
 
+
 ```
+### docs
+start: npm run doc
+
+build: npm run build:doc
+### example 
+start: npm start
+
+build: npm run build 
+### lib
+npm run build:lib
+
