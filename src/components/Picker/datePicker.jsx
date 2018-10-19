@@ -115,7 +115,8 @@ class DatePicker extends React.Component {
     this.setState({
       dateValue: value,
     });
-    this.props.onOk(value, valueObj, e);
+
+    this.props.onOk(new Date(value), valueObj, e);
   }
   
   render() {
@@ -144,8 +145,8 @@ DatePicker.propTypes = {
   show: PropTypes.bool,
   title: PropTypes.string,
   onOk: PropTypes.func,
-  onClose: PropTypes.func,
   onClick: PropTypes.func,
+  onCancel: PropTypes.func,
   letfbtn: PropTypes.string,
   rightbtn: PropTypes.string,
   extra: PropTypes.string,
@@ -169,7 +170,7 @@ DatePicker.defaultProps = {
   rightbtn: 'Ok',
   extra: '请选择', 
   onOk: () => {},
-  // onCancel: () => {},
+  onCancel: () => {},
   onClick: () => {},
 };
 

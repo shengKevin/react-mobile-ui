@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../../build/dist/verdor';
-import { Accordion, Icon, Cell } from '../../../build/dist/react-mui.min.js';
+import { Accordion, Cell } from '../../../build/dist/react-mui.min.js';
 import Header from '../../components/Header/index.jsx';
 
 
@@ -11,13 +11,19 @@ export default class Home extends React.PureComponent {
     return (
       <div className="app">
         <Header />
-        <Accordion defaultActiveKeys={['0']} onChange={this.accordionChange} style={{ paddingTop: 20}}>
+        <Accordion onChange={this.accordionChange} style={{ paddingTop: 20}}>
           <Accordion.Panel header="Data Entry">
             <Cell cellafter style={{ textAlign: 'left' }}>
               <Link to="/button">button</Link>
             </Cell>
             <Cell>
               <Link to="/picker">picker</Link>
+            </Cell>
+            <Cell>
+              <Link to="/picker">datePicker</Link>
+            </Cell>
+            <Cell>
+              <Link to="/picker">cascadePicker</Link>
             </Cell>
             <Cell>
               <Link to="/cell">cell</Link>
@@ -39,41 +45,23 @@ export default class Home extends React.PureComponent {
             </Cell>
           </Accordion.Panel>
           <Accordion.Panel header="Layout">
-            <Cell>
-              <Link to="/button">button</Link>
-            </Cell>
+            <Cell><Link to="/flex">felx</Link></Cell>
+            <Cell><Link to="/blank">blank</Link></Cell>
+            <Cell><Link to="/blank">space</Link></Cell>
           </Accordion.Panel>
           <Accordion.Panel header="Data Display">
             <Cell>
-              <Link to="/button">button</Link>
-            </Cell>
-            <Cell>
-              <Link to="/button">button</Link>
-            </Cell>
-            <Cell>
-              <Link to="/button">button</Link>
+              <Link to="/accordion">accordion</Link>
             </Cell>
           </Accordion.Panel>
           <Accordion.Panel header="Navigation">
-            <Cell>
-              <Link to="/button">button</Link>
-            </Cell>
-            <Cell>
-              <Link to="/button">button</Link>
-            </Cell>
-            <Cell>
-              <Link to="/button">button</Link>
-            </Cell>
           </Accordion.Panel>
           <Accordion.Panel header="Feedback">
             <Cell>
-              <Link to="/button">button</Link>
+              <Link to="/actionsheet">actionSheet</Link>
             </Cell>
             <Cell>
-              <Link to="/button">button</Link>
-            </Cell>
-            <Cell>
-              <Link to="/button">button</Link>
+              <Link to="/modal">modal</Link>
             </Cell>
           </Accordion.Panel>
         </Accordion>

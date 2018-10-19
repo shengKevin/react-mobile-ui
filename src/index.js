@@ -1,8 +1,8 @@
 import { Button } from './components/Button';
 import { Cell, CellBody, CellFooter, CellHeader } from './components/Cell';
-import { Blank } from './components/Blank';
+import { Blank, Space } from './components/Blank';
 import { ActionSheet } from './components/Actionsheet';
-import { Chexkbox, ChexkboxGroup } from './components/CheckBox';
+import { Checkbox, CheckboxGroup } from './components/CheckBox';
 import { Flex, FlexItem } from './components/Flex';
 import { Form, FormCell } from './components/Form';
 import { Input } from './components/Input';
@@ -22,9 +22,10 @@ export default {
   CellFooter,
   CellHeader,
   Blank,
+  Space,
   ActionSheet,
-  Chexkbox,
-  ChexkboxGroup,
+  Checkbox,
+  CheckboxGroup,
   Flex,
   FlexItem,
   Input,

@@ -1,6 +1,8 @@
 .mui-label {
     display: block;
-    width: 105px;
+    width: 85px;
     word-wrap: break-word;
     word-break: break-all;
+    overflow: hidden;
+    white-space: nowrap;
 }

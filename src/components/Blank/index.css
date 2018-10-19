@@ -1,9 +1,24 @@
 .mui-blank {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.mui-blank-lg {
     margin-left: 15px;
     margin-right: 15px;
-    width: 100%;
+}
+.mui-blank-sm {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.mui-space-lg {
+    height: 15px;
+}
+
+.mui-space-sm {
+    height: 6px;
 }
 
 .mui-space {
-    height: 15px;
+    height: 9px;
 }

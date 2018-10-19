@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
+  Redirect,
 } from 'react-router-dom';
 // import FastClick from 'fastclick';
 import 'babel-polyfill';
@@ -58,6 +59,7 @@ class App extends React.Component {
               <Route key={path} path={path} component={component} exact={exact} />
             ))
           }
+          <Redirect to="/" />
         </Switch>
       </Router>
     );

@@ -17,20 +17,15 @@ class CascadePicker extends React.Component {
       const state = {};
       const groupkeys = [];
       for (let i = 0; i < level; i += 1) {
-        if (value.length && value[i]) {
-          if (i === 0) {
-            state[`group${i}`] = data;
-          } else {
-            const len = groupkeys.length;
-            const { children = [] } = state[`group${i - 1}`][groupkeys[len - 1]];
-            state[`group${i}`] = children;
-          }          
-          const key = state[`group${i}`].findIndex(({ value: itemValue }) => itemValue === value[i]) || 0;
-          groupkeys.push(key);
+        if (i === 0) {
+          state[`group${i}`] = data;
         } else {
-          groupkeys.push(0);
-          state[`group${i}`] = [];
-        }
+          const len = groupkeys.length;
+          const { children = [] } = state[`group${i - 1}`][groupkeys[len - 1]];
+          state[`group${i}`] = children;
+        }     
+        const key = state[`group${i}`].findIndex(({ value: itemValue }) => itemValue === value[i]);
+        key === -1 ? groupkeys.push(0) : groupkeys.push(key);
       }
       return { ...state, ...{ groupkeys }};
     }
@@ -121,7 +116,8 @@ class CascadePicker extends React.Component {
     findLabel(value) {
       const svalue = [];
       for (let i = 0; i < value.length; i += 1) {
-        const obj = this.state[`group${i}`].find(item => item.value === value[i]) || {};
+        const group = this.state[`group${i}`] || [];
+        const obj = group.find(item => item.value === value[i]) || {};
         svalue.push(obj.label);
       }
       return svalue;

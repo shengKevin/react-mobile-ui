@@ -8,7 +8,7 @@ Please read the [documentation](https://shengkevin.github.io/react-mui/)
 
 ## Demo
 
-Please read the [demo](https://shengkevin.github.io/react-mui/)
+Please look at the [demo](https://shengkevin.github.io/react-mui/)
 
 ## Installing
 
@@ -42,15 +42,17 @@ Please commit [issues](https://github.com/shengKevin/react-mui/issues)
   git clone https://github.com/shengKevin/react-mui.git
   cd react-mui
   // docs
-    start: npm run doc 
-    
-    build: npm run build:doc
-  // example 
-    start: npm start
+    npm run build:lib
 
-    build: npm run build 
+    npm run doc 
+    
+  // example 
+    npm run build:lib
+
+    npm start
+
   // lib
-    npm run build:lib   
+    npm run build:lib
 
 ```
 
@@ -85,14 +87,20 @@ Please commit [issues](https://github.com/shengKevin/react-mui/issues)
 
 
 ```
+
 ### docs
+
 start: npm run doc
 
 build: npm run build:doc
+
 ### example 
+
 start: npm start
 
 build: npm run build 
+
 ### lib
+
 npm run build:lib
 

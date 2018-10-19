@@ -25,11 +25,6 @@ const plugins = [
       return context && context.indexOf('node_modules') >= 0;
     },
   }),
-  new webpack.DefinePlugin({
-    'process.env': {
-      NODE_ENV: JSON.stringify('production'),
-    },
-  }),
   new webpack.NamedModulesPlugin(),
   new CleanWebpackPlugin(['build/dist', 'build/lib']),
   new BundleAnalyzerPlugin(),
@@ -38,6 +33,11 @@ const plugins = [
 
 const distPlugins = [
   ...plugins,
+  new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify('production'),
+    },
+  }),
   new webpack.optimize.UglifyJsPlugin({
     compress: {
       warnings: false,
@@ -201,6 +201,6 @@ module.exports = [
       library: 'react-mui',
       libraryTarget: 'umd',
     },
-    plugins,
+    plugins: distPlugins,
   },
 ];

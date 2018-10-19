@@ -9,23 +9,54 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'react-mui';
+import { Accordion } from 'react-mui';
 
-const App = () => <Button>hello react-mui</Button>;
+class AccordionDemo extends React.PureComponent {
 
+  accordionChange = (value) => {
+    console.log(value);
+  }
+
+  render() {
+    return (
+      <div>
+        <Accordion defaultActiveKeys={['0']} onChange=    {this.accordionChange}>
+          <Accordion.Panel header="title 1">
+            <Cell>content 1</Cell>
+            <Cell>content 2</Cell>
+            <Cell>content 3</Cell>
+          </Accordion.Panel>
+          <Accordion.Panel header="title 2">
+            <Cell>content 1</Cell>
+            <Cell>content 2</Cell>
+            <Cell>content 3</Cell>
+          </Accordion.Panel>
+          <Accordion.Panel header={<span>title 3</span>}>
+            <Cell>content 1</Cell>
+            <Cell>content 2</Cell>
+            <Cell>content 3</Cell>
+          </Accordion.Panel>
+        </Accordion>
+      </div>
+    );
+  }
+}
 ReactDOM.render((
-    <App/>
+    <AccordionDemo/>
 ), document.getElementById('container'));
 
 ```
 
 ## API
 
+### Accordion
+
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| type    | 按钮类型，可选值为`primary`/`default`/`warning`或者不设  |   string| `default`|
-| size    | 按钮大小，可选值为`small`/`normal`或者不设  | string | `normal`|
-| disabled   | 设置禁用  | boolean |    false  |
-| onClick    | 点击按钮的点击回调函数 | (e: Object): void |   无  |
-| style    | 自定义样式 |   Object  | 无 |
-| className |  样式类名 | string | 无 |
+| defaultActiveKeys    | 默认打开的面板  |   array | [] |
+| accordion    | 是否手风琴模式(只能打开一个面板，打开时其他面盘自动关闭) | boolean | false |
+
+### Panel
+属性 | 说明 | 类型 | 默认值
+----|-----|------|------
+| header    | title |   string / element | '' |

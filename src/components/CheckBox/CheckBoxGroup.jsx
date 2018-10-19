@@ -36,21 +36,17 @@ class CheckboxGroup extends React.Component {
     }
 
     render() {
-      const me = this;
-      return <div>{me.processChild()}</div>
+      return <div>{this.processChild()}</div>;
     }
 }
 
 CheckboxGroup.defaultProps = {
-  // onChange: () => {},
-  // disabled: false,
-  // className: "",
+  onChange: () => {},
   checkedName: [],
 };
   
 CheckboxGroup.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  // className: PropTypes.string,
+  onChange: PropTypes.func,
   checkedName: PropTypes.array || PropTypes.string,
 };
 

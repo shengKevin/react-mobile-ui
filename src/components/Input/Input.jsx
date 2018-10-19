@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Label from '../Label';
+import { Label } from '../Label';
+import { Icon } from '../Icon';
 import { Cell, CellBody, CellHeader, CellFooter } from '../Cell';
 import classNames from '../../utils/classnames';
 import './styles/input.css';
@@ -121,7 +122,7 @@ class Input extends PureComponent {
     }
 
     render() {
-      const { className, label, placeholder, type, clear, defaultValue, value, onChange, rules, valuerules,  ...others } = this.props;
+      const { className, label, placeholder, type, clear, defaultValue, value, onChange, rules, valuerules, ...others } = this.props;
       const { _value, _clear } = this.state;
       const cls = classNames({
         'mui-cell': false,
@@ -143,13 +144,13 @@ class Input extends PureComponent {
               onChange={this.handlerOnChange}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
-              type={type === 'password' ? type : 'text'}
+              type={type}
               {...others}
             />
           </CellBody>
           {clear && (
             <CellFooter>
-              <div className={icls} onClick={this.clearContent}>✗</div>
+              <div className={icls} onClick={this.clearContent}><Icon type="icon-close" /></div>
             </CellFooter>)}
         </Cell>
       );
@@ -191,6 +192,6 @@ Input.defaultProps = {
   maxLength: Infinity,
 };
 
-Input.displayName = 'MuiInput';
+Input.displayName = 'mui-input';
 
 export default Input;

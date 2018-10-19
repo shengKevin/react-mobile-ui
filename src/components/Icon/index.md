@@ -1,6 +1,7 @@
-## Accordion
+## Icon
 
-手风琴折叠效果
+图标， 封装阿里iconfont
+[完整图标库](http://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=9402)
 
 ## code
 
@@ -11,7 +12,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from 'react-mui';
 
-const App = () => <Button>hello react-mui</Button>;
+const App = () => <Icon type="icon-alipay-circle-fill" />;
 
 ReactDOM.render((
     <App/>
@@ -19,13 +20,9 @@ ReactDOM.render((
 
 ```
 
+
 ## API
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| type    | 按钮类型，可选值为`primary`/`default`/`warning`或者不设  |   string| `default`|
-| size    | 按钮大小，可选值为`small`/`normal`或者不设  | string | `normal`|
-| disabled   | 设置禁用  | boolean |    false  |
-| onClick    | 点击按钮的点击回调函数 | (e: Object): void |   无  |
-| style    | 自定义样式 |   Object  | 无 |
-| className |  样式类名 | string | 无 |
+| type    |  图标,支持颜色，大小 |   string | 无 |

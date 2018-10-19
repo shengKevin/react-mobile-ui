@@ -36,8 +36,8 @@ Cell.defaultProps = {
 };
 
 Cell.propTypes = {
-  link: PropTypes.bool,
   component: PropTypes.func,
+  href: PropTypes.string,
   cellbefore: PropTypes.bool,
   cellafter: PropTypes.bool,
 };

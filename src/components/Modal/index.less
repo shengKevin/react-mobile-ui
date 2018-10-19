@@ -1,0 +1,86 @@
+.mui-modal-wrapp {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 66;
+    outline: 0;
+    display: flex;
+    box-align: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: translateZ(1px);
+    .mui-modal-content {
+        background-color: white;
+        padding: 8px 8px 0 8px;
+        z-index: 66666;
+    }
+    
+    .mui-modal-title {
+        /* margin-bottom: 15px; */
+        padding: 8px
+    }
+    
+    .mui-modal-content {
+        position: relative;
+        display: block;
+        width: 270px;
+        border-radius: 7px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+    }
+    .mui-modal-actions {
+        position: relative;
+        display: flex;
+        width: 100%;
+        margin-top: 15px;
+        min-height: 46px;
+        align-items: center;
+    }
+    
+    .mui-modal-actions::before {
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 1px;
+        border-bottom: 1px solid #D9D9D9;
+        color: #D9D9D9;
+    }
+    
+    .mui-modal-action-cell {
+        flex: 1 1;
+        min-height: 46px;
+        line-height: 46px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    .mui-modal-action-cell-before::before {
+        content: '';
+        position: absolute;
+        background-color: #ddd;
+        display: block;
+        z-index: 1;
+        top: 0;
+        right: auto;
+        bottom: auto;
+        width: 1PX;
+        height: 100%;
+    }
+    
+    .mui-modal-action-cell:active {
+        opacity: .6;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+}
+
+.mui-modal-none {
+    display: none;
+}

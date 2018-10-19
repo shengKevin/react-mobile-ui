@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Mask } from '../Mask';
 import classNames from '../../utils/classnames';
-import './index.css';
+import './index.less';
 
 class Modal extends React.Component {
 
@@ -23,7 +23,11 @@ class Modal extends React.Component {
           [className]: className
         });
         return (
-          <div key={index} {...others} className={cls}>{label}</div>
+          <div 
+            key={index}
+            {...others}
+            className={cls}
+          >{label}</div>
         );
       });
     }
@@ -36,8 +40,8 @@ class Modal extends React.Component {
       });
       return (
         <div className={visible ? '' : 'mui-modal-none'} {...others}>
-          <Mask show={visible} />
-          <div className="mui-modal-wrapp" onClick={this.handleCloseMask}>
+          <div className="mui-modal-wrapp">
+            <Mask show={visible} onClick={this.handleCloseMask} />
             <div className={cls}>
               {title && <div className="mui-modal-title">{title}</div>}                         
               {children}

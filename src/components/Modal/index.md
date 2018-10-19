@@ -1,6 +1,6 @@
-## Accordion
+## Modal
 
-手风琴折叠效果
+对话框
 
 ## code
 
@@ -9,12 +9,86 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'react-mui';
+import { Button, Space, Modal } from 'react-mui';
 
-const App = () => <Button>hello react-mui</Button>;
+export default class ModalDemo extends React.PureComponent {
+
+  state = {
+    modalVisible: false,
+    show: false,
+  };
+
+  onCloseModal = () => {
+    this.setState({ modalVisible: false, show: false });
+  }
+
+  render() {
+    const { modalVisible, show } = this.state;
+    return (
+      <div>
+        <Button onClick={() => this.setState({modalVisible: true})}>alert modale</Button>
+        <Modal
+          visible={modalVisible}
+          title="Title"
+          actions={
+            [
+              { 
+                label: 'Ok', 
+                onClick: () => { this.onCloseModal(); },
+              },
+              { 
+                label: 'Cancel', 
+                onClick: () => { this.onCloseModal(); },
+              }
+            ]}
+          onClose={() => this.setState({modalVisible: false})}
+          onClosemask
+        >
+          <div style={{ height: 100, overflow: 'scroll' }}>
+            scoll content...<br />
+            scoll content...<br />
+            scoll content...<br />
+            scoll content...<br />
+            scoll content...<br />
+            scoll content...<br />
+          </div>
+        </Modal>
+        <Space />
+        <Button onClick={() => this.setState({show: true})}>alert modale1</Button>
+        <Modal
+          visible={show}
+          title="Title"
+          actions={
+            [
+              { 
+                label: 'Ok', 
+                onClick: () => { this.onCloseModal(); },
+              },
+              // { 
+              //   label: 'Cancel', 
+              //   onClick: () => { this.onCloseModal(); },
+              // }
+            ]}
+          onClose={() => this.setState({show: false})}
+          onClosemask
+        >
+          <div style={{ height: 100, overflow: 'scroll' }}>
+            scoll content1...<br />
+            scoll content1...<br />
+            scoll content1...<br />
+            scoll content1...<br />
+            scoll content1...<br />
+            scoll content1...<br />
+          </div>
+        </Modal>
+      </div>
+    );
+  }
+}
+
 
 ReactDOM.render((
-    <App/>
+    <ModalDemo/>
 ), document.getElementById('container'));
 
 ```
@@ -23,9 +97,8 @@ ReactDOM.render((
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| type    | 按钮类型，可选值为`primary`/`default`/`warning`或者不设  |   string| `default`|
-| size    | 按钮大小，可选值为`small`/`normal`或者不设  | string | `normal`|
-| disabled   | 设置禁用  | boolean |    false  |
-| onClick    | 点击按钮的点击回调函数 | (e: Object): void |   无  |
-| style    | 自定义样式 |   Object  | 无 |
-| className |  样式类名 | string | 无 |
+| title    | title   |   string/element | '' |
+| visible | 显示modal | boolean | false |
+| actions   | 操作选项  | array |    []  |
+| onCloseMask    | 点击蒙层是否触发onClose |   boolean  | true |
+| onClose    | 点击蒙层触发 | function |   无  |

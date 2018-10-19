@@ -1,6 +1,6 @@
-## Accordion
+## cell
 
-手风琴折叠效果
+行
 
 ## code
 
@@ -11,7 +11,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from 'react-mui';
 
-const App = () => <Button>hello react-mui</Button>;
+const App = () => (
+  <Cell>
+    <CellHeader>Header</CellHeader>
+    <CellBody>Body</CellBody>
+    <CellFooter>Footer</CellFooter>
+  </Cell>
+  <Cell>
+    <Label>输入框</Label>
+  </Cell>
+  <Cell>
+    <CellHeader><Label>单位名称</Label></CellHeader>
+    <CellBody>
+    <input className="mui-input" placeholder="请输入单位名称" />
+    </CellBody>
+  </Cell>
+);
 
 ReactDOM.render((
     <App/>
@@ -21,11 +36,10 @@ ReactDOM.render((
 
 ## API
 
+### Cell
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| type    | 按钮类型，可选值为`primary`/`default`/`warning`或者不设  |   string| `default`|
-| size    | 按钮大小，可选值为`small`/`normal`或者不设  | string | `normal`|
-| disabled   | 设置禁用  | boolean |    false  |
-| onClick    | 点击按钮的点击回调函数 | (e: Object): void |   无  |
-| style    | 自定义样式 |   Object  | 无 |
-| className |  样式类名 | string | 无 |
+| href    | a标签链接，存在cell为<a></a>  | string | 无
+| cellbefore | cell的上划线 border | boolean | false
+| cellafter | cell的下划线 border | boolean | true
+

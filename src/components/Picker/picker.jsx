@@ -13,12 +13,13 @@ class Picker extends React.Component {
   }
 
     initState = () => {
-      const { data } = this.props;
+      const { data, value } = this.props;
       const state = {};
       for (let i = 0; i < data.length; i += 1) {
+        const index = data[i].findIndex(item => item.value === value[i]);
         state[`groupValue${i}`] = {
-          value: data[i][0],
-          index: 0,
+          value: data[i][index],
+          index,
         };
       }
       return state;
@@ -39,12 +40,15 @@ class Picker extends React.Component {
     getValue = () => {
       const value = [];
       const completeValue = [];
-      for (let key in this.state) {
-        const gv = this.state[key] || {};
+
+      const keys = Object.keys(this.state);
+      const values = Object.values(this.state);
+      for (let i = 0; i < keys.length; i += 1) {
+        const gv = values[i] || {};
         const v = gv.value || {};
         completeValue.push(v);
         value.push(v.value);
-      }
+      } 
       return { completeValue, value };
     }
 
@@ -79,7 +83,7 @@ class Picker extends React.Component {
       const svalue = [];
       for (let i = 0; i < value.length; i += 1) {
         if (data[i] instanceof Array) {
-          const obj = data[i].find(item => item.value === value[i]) || {};
+          const obj = data[i].find(item => item.value === value[i]) || data[i][0];
           svalue.push(obj.label);
         }
       }
@@ -91,7 +95,7 @@ class Picker extends React.Component {
       for (let i = 0; i < value.length; i += 1) {
         if (data[i] instanceof Array) {
           const index = data[i].findIndex(item => item.value === value[i]);
-          svalue.push(index);
+          index === -1 ? svalue.push(0) : svalue.push(index);
         }
       }
       return svalue;
@@ -120,7 +124,7 @@ class Picker extends React.Component {
             <div className="mui-picker-label">{children}</div>
             <div className={extracls}>
               {
-                svalue.map((item,index) => (
+                svalue.map((item, index) => (
                   <span key={index}>
                     {item}
                     {index !== svalue.length - 1 ? ',' : ''}

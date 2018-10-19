@@ -1,6 +1,6 @@
-## Accordion
+## Flex
 
-手风琴折叠效果
+用于弹性布局
 
 ## code
 
@@ -9,9 +9,64 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'react-mui';
+import { Blank, Space, Flex, FlexItem, Switch } from 'react-mui';
 
-const App = () => <Button>hello react-mui</Button>;
+export default class FlexDemo extends React.PureComponent {
+
+  render() {
+    return (
+      <div>
+        <Blank>
+          <Space />
+          <Flex>
+            <FlexItem>
+              <Switch onChange={this.handleSwitch} />
+            </FlexItem>
+            <FlexItem>
+              <Switch defaultChecked="checked" />
+            </FlexItem>
+            <FlexItem>
+              <Switch />
+            </FlexItem>
+          </Flex>
+          <Space />
+          <Flex>
+            <FlexItem>
+              <div>block</div>
+            </FlexItem>
+            <FlexItem>
+              <div>block</div>
+            </FlexItem>
+          </Flex>
+          <Space />
+          <Flex style={{justifyContent: 'space-around'}}>
+            <FlexItem style={{flexGrow: 0}}>
+              <div style={{background: '#ebebef', width: 60, height: 20}}>block</div>
+            </FlexItem>
+            <FlexItem style={{flexGrow: 0}}>
+              <div style={{background: '#ebebef', width: 60, height: 20}}>block</div>
+            </FlexItem>
+            <FlexItem style={{flexGrow: 0}}>
+              <div style={{background: '#ebebef', width: 60, height: 20}}>block</div>
+            </FlexItem>
+          </Flex>
+          <Space />
+          <Flex style={{justifyContent: 'space-between'}}>
+            <FlexItem style={{flexGrow: 0}}>
+              <div style={{background: '#ebebef', width: 60, height: 20}}>block</div>
+            </FlexItem>
+            <FlexItem style={{flexGrow: 0}}>
+              <div style={{background: '#ebebef', width: 60, height: 20}}>block</div>
+            </FlexItem>
+            <FlexItem style={{flexGrow: 0}}>
+              <div style={{background: '#ebebef', width: 60, height: 20}}>block</div>
+            </FlexItem>
+          </Flex>
+        </Blank>
+      </div>
+    );
+  }
+}
 
 ReactDOM.render((
     <App/>
@@ -19,13 +74,18 @@ ReactDOM.render((
 
 ```
 
-## API
+### API 
 
-属性 | 说明 | 类型 | 默认值
-----|-----|------|------
-| type    | 按钮类型，可选值为`primary`/`default`/`warning`或者不设  |   string| `default`|
-| size    | 按钮大小，可选值为`small`/`normal`或者不设  | string | `normal`|
-| disabled   | 设置禁用  | boolean |    false  |
-| onClick    | 点击按钮的点击回调函数 | (e: Object): void |   无  |
-| style    | 自定义样式 |   Object  | 无 |
-| className |  样式类名 | string | 无 |
+flex布局 
+
+.mui-flex {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.mui-flex-item {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+}

@@ -46,7 +46,7 @@ class Panel extends PureComponent {
 }
 
 Panel.propTypes = {
-  header: PropTypes.string || PropTypes.element,
+  header: PropTypes.node,
   id: PropTypes.string,
   activeKeys: PropTypes.array,
 };
