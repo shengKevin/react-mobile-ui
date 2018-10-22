@@ -4,11 +4,11 @@ Web mobile components with react
 
 ## Doc
 
-Please read the [documentation](https://shengkevin.github.io/react-mui/)
+Please read the [documentation](https://shengkevin.github.io/react-mui/docs/index.html)
 
 ## Demo
 
-Please look at the [demo](https://shengkevin.github.io/react-mui/)
+Please look at the [demo](https://shengkevin.github.io/react-mui/example/index.html)
 
 ## Installing
 

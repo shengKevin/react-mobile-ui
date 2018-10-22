@@ -81,7 +81,7 @@ Accordion.propTypes = {
 
 Accordion.defaultProps = {
   activeKeys: [],
-  defaultActiveKeys: '',
+  defaultActiveKeys: [],
   onChange: () => {},
   accordion: false,
 };

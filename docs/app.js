@@ -1,55 +1,68 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Markdown from 'react-markdown';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import 'babel-polyfill';
-import lib from '../src/index';
-import { Menu } from './components/Menu';
+import Layout from './components/Layout';
 import CodeBlock from './code-block';
 import './app.less';
-import { CellBody } from '../src/components/Cell';
-const btnMark = require('../src/components/Button/index.md');
-const { Cell } = lib;
+import {
+  ButtonDocs,
+  CellDocs,
+  BlankDocs,
+  ActionSheetDocs,
+  CheckboxDocs,
+  InputDocs,
+  FlexDocs,
+  ModalDocs,
+  PickerDocs,
+  SwitchDocs,
+  RadioDocs,
+  AccordionDocs,
+  IconDocs,
+} from '../src/md.js';
 
-// const routers = [
-//   { path: '/Accordion', component: Accordion },
-//   { path: '/button', component: Button },
-//   { path: '/button', component: Button },
-//   { path: '/button', component: Button },
-//   { path: '/button', component: Button },
-//   { path: '/button', component: Button },
-//   { path: '/button', component: Button },
-//   { path: '/button', component: Button },
-//   { path: '/button', component: Button },
-//   { path: '/button', component: Button },
-//   { path: '/button', component: Button },
-// ];
+// const btnMark = require('../src/components/Button/index.md');
+
+const ReactMarkdown = (md) => { return () => <Layout routers={routers}><Markdown source={md} renderers={{code: CodeBlock}} /></Layout>; };
+
+const routers = [
+  {path: '/start', component: ReactMarkdown(''), exact: true},
+  {path: '/button', component: ReactMarkdown(ButtonDocs)},
+  {path: '/cell', component: ReactMarkdown(CellDocs)},
+  {path: '/blank', component: ReactMarkdown(BlankDocs)},
+  {path: '/space', component: ReactMarkdown(BlankDocs)},
+  {path: '/actionsheet', component: ReactMarkdown(ActionSheetDocs)},
+  {path: '/checkbox', component: ReactMarkdown(CheckboxDocs)},
+  {path: '/input', component: ReactMarkdown(InputDocs)},
+  {path: '/flex', component: ReactMarkdown(FlexDocs)},
+  {path: '/flexItem', component: ReactMarkdown(FlexDocs)},
+  {path: '/modal', component: ReactMarkdown(ModalDocs)},
+  {path: '/picker', component: ReactMarkdown(PickerDocs)},
+  {path: '/cascadePicker', component: ReactMarkdown(PickerDocs)},
+  {path: '/datePicker', component: ReactMarkdown(PickerDocs)},
+  {path: '/switch', component: ReactMarkdown(SwitchDocs)},
+  {path: '/radio', component: ReactMarkdown(RadioDocs)},
+  {path: '/accordion', component: ReactMarkdown(AccordionDocs)},
+  {path: '/icon', component: ReactMarkdown(IconDocs)},
+];
 
 class App extends React.Component {
-
-  handleMenuChange = (key) => {
-    console.log(key);
-  }
 
   render() {
     return (
       <div className="app">
-        <Cell style={{background: '#FF5A10', color: '#fff'}}><CellBody>react-mui docs</CellBody></Cell>
-        <Menu onClick={this.handleMenuChange} style={{background: '#f5f5f5'}}>
-          <Menu.Item key="1">选项一</Menu.Item>
-          <Menu.Item key="2">选项二</Menu.Item>
-          <Menu.Item key="3">选项三</Menu.Item>
-          <Menu.Item key="4">选项四</Menu.Item>
-          <Menu.Item key="5">选项五</Menu.Item>
-          <Menu.Item key="6">选项六</Menu.Item>
-        </Menu>
-        {/* <div>
-          <Markdown
-            source={btnMark}
-            renderers={{code: CodeBlock}}
-          />
-        </div> */}
-        {/* <iframe src="https://shengkevin.github.io/react-mui/index.html"></iframe> */}
+        <Router>
+          <Switch>
+            {
+              routers.map(({path, component, exact}) => (
+                <Route key={path} path={path} component={component} exact={exact} />
+              ))
+            }
+            <Redirect to="/start" />
+          </Switch>
+        </Router>
+        {/* <iframe src="https://shengkevin.github.io/button"></iframe> */}
       </div>
     );
   }
