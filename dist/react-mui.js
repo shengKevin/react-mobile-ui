@@ -414,7 +414,7 @@ Accordion.propTypes = {
 
 Accordion.defaultProps = {
   activeKeys: [],
-  defaultActiveKeys: '',
+  defaultActiveKeys: [],
   onChange: function onChange() {},
   accordion: false
 };
