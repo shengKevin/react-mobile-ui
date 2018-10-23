@@ -34,7 +34,7 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: join(jsSourcePath, 'index.html'),
     path: buildPath,
-    filename: 'index.html',
+    filename: isDocs ? 'index.html' : 'exmple.html',
   }),
 ];
 
