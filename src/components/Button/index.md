@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'react-mui';
+import { Button, Space, Blank } from 'react-mui';
 
 const App = () => (
       <div>

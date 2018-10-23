@@ -34,7 +34,7 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: join(jsSourcePath, 'index.html'),
     path: buildPath,
-    filename: isDocs ? 'index.html' : 'exmple.html',
+    filename: 'index.html',
   }),
 ];
 
@@ -162,7 +162,7 @@ module.exports = {
   },
   plugins,
   devServer: {
-    contentBase: isProduction ? buildPath : jsSourcePath,
+    contentBase: isProduction ? buildPath : buildPath,
     historyApiFallback: true,
     port: isDocs ? 8000 : 3000,
     compress: isProduction,
