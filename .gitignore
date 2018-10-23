@@ -3,7 +3,7 @@
 
 # production
 # /build
-/build/dist
+# /build/dist
 # /build/lib
 # /build/example
 
