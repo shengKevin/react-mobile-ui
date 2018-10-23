@@ -34,11 +34,81 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: join(jsSourcePath, 'index.html'),
     path: buildPath,
-    filename: isDocs ? 'index.html' : 'example.html',
+    filename: 'index.html',
   }),
 ];
 
 // Common rules
+// const rules = [
+//   {
+//     test: /\.(js|jsx)$/,
+//     exclude: /node_modules/,
+//     use: [
+//       'babel-loader',
+//     ],
+//   }, {
+//     test: /\.css/,
+//     loader: [
+//       'style-loader',
+//       { loader: 'css-loader', options: { sourceMap: !isProduction, importLoaders: 1 } },
+//       {
+//         loader: 'postcss-loader',
+//         options: {
+//           sourceMap: !isProduction,
+//           plugins: () => [
+//             autoprefixer({
+//               browsers: [
+//                 'last 3 version',
+//                 'ie >= 10',
+//                 'iOS >= 7',
+//                 'Android >= 4.1'
+//               ],
+//             })
+//           ]
+//         }
+//       }]
+//   }, {
+//     test: /\.less$/,
+//     exclude: /node_modules/,
+//     use: [
+//       'style-loader',
+//       { loader: 'css-loader', options: { sourceMap: !isProduction, importLoaders: 2 } },
+//       {
+//         loader: 'postcss-loader',
+//         options: {
+//           sourceMap: !isProduction,
+//           plugins: () => [
+//             autoprefixer({
+//               browsers: [
+//                 'last 3 version',
+//                 'ie >= 10',
+//                 'iOS >= 7',
+//                 'Android >= 4.1'
+//               ],
+//             })
+//           ]
+//         }
+//       },
+//       {
+//         loader: 'less-loader',
+//         options: {
+//           sourceMap: !isProduction
+//         }
+//       }
+//     ],
+//   },
+//   {
+//     test: /\.(png|gif|jpg|svg)$/,
+//     use: 'url-loader?limit=20480&name=assets/[name]-[hash].[ext]',
+//   }, {
+//     test: /\.md$/,
+//     loader: 'raw-loader'
+//   }, {
+//     test: /\.json$/,
+//     loader: 'json-loader'
+//   }
+// ];
+
 const rules = [
   {
     test: /\.(js|jsx)$/,
@@ -48,13 +118,15 @@ const rules = [
     ],
   }, {
     test: /\.css/,
-    loader: [
+    // use: ExtractTextWebpackPlugin.extract({
+    //   fallback: 'style-loader',
+    use: [
       'style-loader',
-      { loader: 'css-loader', options: { sourceMap: !isProduction, importLoaders: 1 } },
+      { loader: 'css-loader', options: { sourceMap: true } },
       {
         loader: 'postcss-loader',
         options: {
-          sourceMap: !isProduction,
+          sourceMap: true,
           plugins: () => [
             autoprefixer({
               browsers: [
@@ -67,16 +139,19 @@ const rules = [
           ]
         }
       }]
+    // })
   }, {
     test: /\.less$/,
     exclude: /node_modules/,
+    // use: ExtractTextWebpackPlugin.extract({
+    //   fallback: '',
     use: [
       'style-loader',
-      { loader: 'css-loader', options: { sourceMap: !isProduction, importLoaders: 2 } },
+      { loader: 'css-loader', options: { sourceMap: true } },
       {
         loader: 'postcss-loader',
         options: {
-          sourceMap: !isProduction,
+          sourceMap: true,
           plugins: () => [
             autoprefixer({
               browsers: [
@@ -92,20 +167,15 @@ const rules = [
       {
         loader: 'less-loader',
         options: {
-          sourceMap: !isProduction
+          sourceMap: true
         }
       }
-    ],
+    ]
+    // })
   },
   {
     test: /\.(png|gif|jpg|svg)$/,
     use: 'url-loader?limit=20480&name=assets/[name]-[hash].[ext]',
-  }, {
-    test: /\.md$/,
-    loader: 'raw-loader'
-  }, {
-    test: /\.json$/,
-    loader: 'json-loader'
   }
 ];
 
@@ -154,7 +224,7 @@ module.exports = {
     rules,
   },
   resolve: {
-    extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx', '.less'],
+    extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx', '.less', '.css'],
     modules: [
       path.resolve(__dirname, 'node_modules'),
       jsSourcePath,
@@ -162,7 +232,7 @@ module.exports = {
   },
   plugins,
   devServer: {
-    contentBase: isProduction ? buildPath : buildPath,
+    contentBase: isProduction ? buildPath : jsSourcePath,
     historyApiFallback: true,
     port: isDocs ? 8000 : 3000,
     compress: isProduction,
