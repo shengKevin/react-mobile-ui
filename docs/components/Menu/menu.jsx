@@ -3,7 +3,8 @@ import { PropTypes } from 'prop-types';
 import classNames from '../../../src/utils/classnames';
 import Item from './item.jsx';
 import SubMenu from './subMenu.jsx';
-import './index.less';
+// import './index.less';
+import './index.css';
 
 class Menu extends React.PureComponent {
 

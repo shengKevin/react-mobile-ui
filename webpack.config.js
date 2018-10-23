@@ -106,10 +106,6 @@ const rules = [
   }
 ];
 
-// , {
-//   test: /\.json$/,
-//   loader: 'json-loader'
-// }
 if (!isProduction) {
   plugins.push(
     new webpack.HotModuleReplacementPlugin()
@@ -155,7 +151,7 @@ module.exports = {
     rules,
   },
   resolve: {
-    extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx', '.less', '.css'],
+    extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx', '.less'],
     modules: [
       path.resolve(__dirname, 'node_modules'),
       jsSourcePath,

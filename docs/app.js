@@ -5,7 +5,7 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import 'babel-polyfill';
 import Layout from './components/Layout';
 import CodeBlock from './code-block';
-import './app.less';
+import './app.css';
 import {
   ButtonDocs,
   CellDocs,

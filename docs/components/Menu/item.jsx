@@ -1,7 +1,8 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import classNames from '../../../src/utils/classnames';
-import './index.less';
+// import './index.less';
+import './index.css';
 
 class Item extends React.PureComponent {
 

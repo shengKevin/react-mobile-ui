@@ -3,7 +3,8 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Menu } from '../Menu';
 import { Cell, CellBody } from '../../../src/components/Cell';
-import './index.less';
+// import './index.less';
+import './index.css';
 
 class Layout extends React.Component {
 
