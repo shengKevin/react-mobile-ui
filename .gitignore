@@ -2,7 +2,7 @@
 /node_modules
 
 # production
-/build
+# /build
 # /build/dist
 # /build/lib
 # /build/example
