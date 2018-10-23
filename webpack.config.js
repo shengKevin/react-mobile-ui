@@ -39,76 +39,6 @@ const plugins = [
 ];
 
 // Common rules
-// const rules = [
-//   {
-//     test: /\.(js|jsx)$/,
-//     exclude: /node_modules/,
-//     use: [
-//       'babel-loader',
-//     ],
-//   }, {
-//     test: /\.css/,
-//     loader: [
-//       'style-loader',
-//       { loader: 'css-loader', options: { sourceMap: !isProduction, importLoaders: 1 } },
-//       {
-//         loader: 'postcss-loader',
-//         options: {
-//           sourceMap: !isProduction,
-//           plugins: () => [
-//             autoprefixer({
-//               browsers: [
-//                 'last 3 version',
-//                 'ie >= 10',
-//                 'iOS >= 7',
-//                 'Android >= 4.1'
-//               ],
-//             })
-//           ]
-//         }
-//       }]
-//   }, {
-//     test: /\.less$/,
-//     exclude: /node_modules/,
-//     use: [
-//       'style-loader',
-//       { loader: 'css-loader', options: { sourceMap: !isProduction, importLoaders: 2 } },
-//       {
-//         loader: 'postcss-loader',
-//         options: {
-//           sourceMap: !isProduction,
-//           plugins: () => [
-//             autoprefixer({
-//               browsers: [
-//                 'last 3 version',
-//                 'ie >= 10',
-//                 'iOS >= 7',
-//                 'Android >= 4.1'
-//               ],
-//             })
-//           ]
-//         }
-//       },
-//       {
-//         loader: 'less-loader',
-//         options: {
-//           sourceMap: !isProduction
-//         }
-//       }
-//     ],
-//   },
-//   {
-//     test: /\.(png|gif|jpg|svg)$/,
-//     use: 'url-loader?limit=20480&name=assets/[name]-[hash].[ext]',
-//   }, {
-//     test: /\.md$/,
-//     loader: 'raw-loader'
-//   }, {
-//     test: /\.json$/,
-//     loader: 'json-loader'
-//   }
-// ];
-
 const rules = [
   {
     test: /\.(js|jsx)$/,
@@ -118,15 +48,13 @@ const rules = [
     ],
   }, {
     test: /\.css/,
-    // use: ExtractTextWebpackPlugin.extract({
-    //   fallback: 'style-loader',
-    use: [
+    loader: [
       'style-loader',
-      { loader: 'css-loader', options: { sourceMap: true } },
+      { loader: 'css-loader', options: { sourceMap: !isProduction, importLoaders: 1 } },
       {
         loader: 'postcss-loader',
         options: {
-          sourceMap: true,
+          sourceMap: !isProduction,
           plugins: () => [
             autoprefixer({
               browsers: [
@@ -139,19 +67,16 @@ const rules = [
           ]
         }
       }]
-    // })
   }, {
     test: /\.less$/,
     exclude: /node_modules/,
-    // use: ExtractTextWebpackPlugin.extract({
-    //   fallback: '',
     use: [
       'style-loader',
-      { loader: 'css-loader', options: { sourceMap: true } },
+      { loader: 'css-loader', options: { sourceMap: !isProduction, importLoaders: 2 } },
       {
         loader: 'postcss-loader',
         options: {
-          sourceMap: true,
+          sourceMap: !isProduction,
           plugins: () => [
             autoprefixer({
               browsers: [
@@ -167,18 +92,24 @@ const rules = [
       {
         loader: 'less-loader',
         options: {
-          sourceMap: true
+          sourceMap: !isProduction
         }
       }
-    ]
-    // })
+    ],
   },
   {
     test: /\.(png|gif|jpg|svg)$/,
     use: 'url-loader?limit=20480&name=assets/[name]-[hash].[ext]',
+  }, {
+    test: /\.md$/,
+    loader: 'raw-loader'
   }
 ];
 
+// , {
+//   test: /\.json$/,
+//   loader: 'json-loader'
+// }
 if (!isProduction) {
   plugins.push(
     new webpack.HotModuleReplacementPlugin()

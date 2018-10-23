@@ -24,7 +24,7 @@ import {
   AccordionDemo,
   IconDemo,
 } from './pages';
-import './app.less';
+import './app.css';
 
 // window.addEventListener('load', () => {
 //   const body = document.body || document.documentElement;
