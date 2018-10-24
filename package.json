@@ -27,7 +27,7 @@
     "lib"
   ],
   "author": "LiuSheng",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/shengKevin/react-mui",
   "bugs": {
     "url": "https://github.com/shengKevin/react-mui/issues"

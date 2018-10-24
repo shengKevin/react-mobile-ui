@@ -95,3 +95,31 @@ html::-webkit-scrollbar {
   -webkit-overflow-scrolling: touch;
   z-index: 1;
 }
+
+.layout-header {
+  width: 100%;
+  padding-bottom: 24px;
+  box-sizing: border-box;
+}
+.layout-content {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+.layout-content .layout-mobile {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 375px;
+}
+.layout-content-code {
+  flex: 1;
+  width: 600px;
+  flex-basis: 600px;
+  padding-left: 36px;
+  box-sizing: border-box;
+  height: 667px;
+  overflow: hidden;
+}
+.layout-content .layout-footer {
+  width: 100%;
+}
