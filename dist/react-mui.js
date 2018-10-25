@@ -175,6 +175,21 @@ exports.push([module.i, "button {\n  width: 100%;\n  border-width: 0;\n  outline
 
 /***/ }),
 
+/***/ "../node_modules/css-loader/index.js??ref--2-1!../node_modules/postcss-loader/src/index.js??ref--2-2!../node_modules/less-loader/dist/cjs.js??ref--2-3!./components/Icon/index.less":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.i, ".mui-icon-lg {\n  width: 36px;\n  height: 36px;\n}\n.mui-icon-md {\n  width: 28px;\n  height: 28px;\n}\n.mui-icon-sm {\n  width: 21px;\n  height: 21px;\n}\n", "", {"version":3,"sources":["/Users/liusheng/Desktop/2018_code/react-mui/src/components/Icon/index.less"],"names":[],"mappings":"AAAA;EACE,YAAA;EACA,aAAA;CACD;AACD;EACE,YAAA;EACA,aAAA;CACD;AACD;EACE,YAAA;EACA,aAAA;CACD","file":"index.less","sourcesContent":[".mui-icon-lg {\n  width: 36px;\n  height: 36px;\n}\n.mui-icon-md {\n  width: 28px;\n  height: 28px;\n}\n.mui-icon-sm {\n  width: 21px;\n  height: 21px;\n}"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "../node_modules/css-loader/index.js??ref--2-1!../node_modules/postcss-loader/src/index.js??ref--2-2!../node_modules/less-loader/dist/cjs.js??ref--2-3!./components/Modal/index.less":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2529,6 +2544,8 @@ var _classnames = __webpack_require__("./utils/classnames.js");
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+__webpack_require__("./components/Icon/index.less");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Icon = function (_React$PureComponent) {
@@ -2545,10 +2562,13 @@ var Icon = function (_React$PureComponent) {
       var _props = this.props,
           type = _props.type,
           className = _props.className,
-          others = (0, _objectWithoutProperties3.default)(_props, ['type', 'className']);
+          size = _props.size,
+          others = (0, _objectWithoutProperties3.default)(_props, ['type', 'className', 'size']);
 
       var cls = (0, _classnames2.default)((0, _defineProperty3.default)({
-        'icon': true
+        'mui-icon-lg': size === 'lg',
+        'mui-icon-md': size === 'md',
+        'mui-icon-sm': size === 'sm'
       }, className, className));
       return _react2.default.createElement(
         'svg',
@@ -2561,11 +2581,13 @@ var Icon = function (_React$PureComponent) {
 }(_react2.default.PureComponent);
 
 Icon.propTypes = {
-  type: _propTypes2.default.string
+  type: _propTypes2.default.string,
+  size: _propTypes2.default.string
 };
 
 Icon.defaultProps = {
-  type: ''
+  type: '',
+  size: 'md'
 };
 
 exports.default = Icon;
@@ -2591,6 +2613,57 @@ var _Icon2 = _interopRequireDefault(_Icon);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Icon = _Icon2.default;
+
+/***/ }),
+
+/***/ "./components/Icon/index.less":
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__("../node_modules/css-loader/index.js??ref--2-1!../node_modules/postcss-loader/src/index.js??ref--2-2!../node_modules/less-loader/dist/cjs.js??ref--2-3!./components/Icon/index.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__("../node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/postcss-loader/src/index.js??ref--2-2!../../../node_modules/less-loader/dist/cjs.js??ref--2-3!./index.less", function() {
+		var newContent = require("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/postcss-loader/src/index.js??ref--2-2!../../../node_modules/less-loader/dist/cjs.js??ref--2-3!./index.less");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
