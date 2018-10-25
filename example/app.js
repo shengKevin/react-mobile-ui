@@ -23,6 +23,7 @@ import {
   RadioDemo,
   AccordionDemo,
   IconDemo,
+  ToastDemo,
 } from './pages';
 import './app.css';
 
@@ -46,7 +47,7 @@ const routers = [
   {path: '/radio', component: RadioDemo},
   {path: '/accordion', component: AccordionDemo},
   {path: '/icon', component: IconDemo},
-  
+  {path: '/toast', component: ToastDemo},
 ];
 
 class App extends React.Component {

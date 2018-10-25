@@ -12,6 +12,7 @@ import SwitchDemo from './Switch';
 import RadioDemo from './Radio';
 import AccordionDemo from './Accordion';
 import IconDemo from './Icon';
+import ToastDemo from './Toast';
 
 export {
   Home,
@@ -28,4 +29,5 @@ export {
   RadioDemo,
   AccordionDemo,
   IconDemo,
+  ToastDemo,
 };
