@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from '../../../build/lib/Button';
 import { Space } from '../../../build/lib/Blank';
-import { Icon } from '../../../src/components/Icon';
-import { Toast } from '../../../src/components/Toast';
+import { Icon } from '../../../build/lib/Icon';
+import { Toast } from '../../../build/lib/Toast';
 
 
 export default class ToastDemo extends React.PureComponent {

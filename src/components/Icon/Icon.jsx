@@ -12,6 +12,8 @@ class Icon extends React.PureComponent {
       'mui-icon-lg': size === 'lg',
       'mui-icon-md': size === 'md',
       'mui-icon-sm': size === 'sm',
+      'mui-icon-xs': size === 'xs',
+      'mui-icon-xxs': size === 'xxs',
       [className]: className,
     });
     return (
@@ -29,7 +31,7 @@ Icon.propTypes = {
 
 Icon.defaultProps = {
   type: '',
-  size: 'md',
+  size: 'xxs',
 };
 
 export default Icon;

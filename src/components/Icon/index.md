@@ -26,3 +26,4 @@ ReactDOM.render((
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
 | type    |  图标,支持颜色，大小 |   string | 无 |
+| size    |  大小 xxs xs sm md lg |   string | xxs |

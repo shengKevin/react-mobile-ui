@@ -24,6 +24,8 @@ import {
   AccordionDemo,
   IconDemo,
   ToastDemo,
+  ToptipsDemo,
+  TagDemo,
 } from './pages';
 import './app.css';
 
@@ -48,6 +50,9 @@ const routers = [
   {path: '/accordion', component: AccordionDemo},
   {path: '/icon', component: IconDemo},
   {path: '/toast', component: ToastDemo},
+  {path: '/toptips', component: ToptipsDemo},
+  {path: '/tag', component: TagDemo},
+
 ];
 
 class App extends React.Component {

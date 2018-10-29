@@ -13,6 +13,8 @@ import RadioDemo from './Radio';
 import AccordionDemo from './Accordion';
 import IconDemo from './Icon';
 import ToastDemo from './Toast';
+import ToptipsDemo from './Toptips';
+import TagDemo from './Tag';
 
 export {
   Home,
@@ -30,4 +32,6 @@ export {
   AccordionDemo,
   IconDemo,
   ToastDemo,
+  ToptipsDemo,
+  TagDemo,
 };

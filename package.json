@@ -1,7 +1,7 @@
 {
-  "name": "react-mui",
+  "name": "react-mobile-ui",
   "version": "1.0.0",
-  "description": "mui for react mobile",
+  "description": "mobile-ui for react mobile",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --color --config ./webpack.config.js",

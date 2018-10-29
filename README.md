@@ -12,7 +12,7 @@ Please look at the [demo](https://shengkevin.github.io/react-mui/example/index.h
 
 ## Installing
 
-npm install react-mui --save-dev
+npm install react-mobile-ui --save-dev
 
 ## Use example
 
