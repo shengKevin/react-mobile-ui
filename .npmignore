@@ -9,3 +9,7 @@ docs
 test
 example
 .github
+.eslintignore
+build/docs
+build/example
+_config.yml

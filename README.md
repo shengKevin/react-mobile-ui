@@ -1,4 +1,4 @@
-# React-mui
+# React-mobile-ui
 
 Web mobile components with react
 
