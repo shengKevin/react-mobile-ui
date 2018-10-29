@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Space, Toptips } from 'react-mui';
+import { Button, Space, Toptips } from 'react-mobile-ui';
 
 class ToptipsDemo extends React.PureComponent {
 

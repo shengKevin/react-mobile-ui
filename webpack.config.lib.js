@@ -16,19 +16,20 @@ const buildDist = join(__dirname, 'build/dist');
 
 // Lib common plugins
 const plugins = [
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor',
-    // filename: 'vendor-[hash].js',
-    filename: 'verdor.js',
-    minChunks(module) {
-      const context = module.context;
-      return context && context.indexOf('node_modules') >= 0;
-    },
-  }),
+  // 与组件按需加载冲突，不拆分node__modules, 该功能由项目实现中完成拆分
+  // new webpack.optimize.CommonsChunkPlugin({
+  //   name: 'vendor',
+  //   // filename: 'vendor-[hash].js',
+  //   filename: 'verdor.js',
+  //   minChunks(module) {
+  //     const context = module.context;
+  //     return context && context.indexOf('node_modules') >= 0;
+  //   },
+  // }),
   new webpack.NamedModulesPlugin(),
   new CleanWebpackPlugin(['build/dist', 'build/lib']),
   new BundleAnalyzerPlugin(),
-  // new ExtractTextWebpackPlugin('react-mui.css')
+  // new ExtractTextWebpackPlugin('react-mobile-ui.css')
 ];
 
 const distPlugins = [
@@ -146,10 +147,6 @@ const libEntry = (() => {
 const webpackConfig = {
   devtool: 'source-map',
   context: libSourcePath,
-  // externals: {
-  //   'react': 'react',
-  //   'react-dom': 'ReactDOM'
-  // },
   module: {
     rules,
   },
@@ -171,8 +168,8 @@ module.exports = [
     output: {
       path: buildDist,
       publicPath: '',
-      filename: 'react-mui.min.js',
-      library: 'react-mui',
+      filename: 'react-mobile-ui.min.js',
+      library: 'react-mobile-ui',
       libraryTarget: 'umd',
     },
     plugins: distPlugins,
@@ -184,8 +181,8 @@ module.exports = [
     output: {
       path: buildDist,
       publicPath: '',
-      filename: 'react-mui.js',
-      library: 'react-mui',
+      filename: 'react-mobile-ui.js',
+      library: 'react-mobile-ui',
       libraryTarget: 'umd',
     },
     plugins,
@@ -198,7 +195,7 @@ module.exports = [
       path: buildLib,
       publicPath: '',
       filename: '[name]/index.js',
-      library: 'react-mui',
+      library: 'react-mobile-ui',
       libraryTarget: 'umd',
     },
     plugins: distPlugins,

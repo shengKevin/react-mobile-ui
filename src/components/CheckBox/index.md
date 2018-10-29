@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { CheckboxGroup, Checkbox, Cell } from 'react-mui';
+import { CheckboxGroup, Checkbox, Cell } from 'react-mobile-ui';
 
 class CheckboxDemo extends React.PureComponent {
   state = {

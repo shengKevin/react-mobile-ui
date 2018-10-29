@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Tag, Space, Flex, FlexItem } from 'react-mui';
+import { Tag, Space, Flex, FlexItem } from 'react-mobile-ui';
 
 class TagDemo extends React.PureComponent {
 

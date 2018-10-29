@@ -1,40 +1,73 @@
-```javascript
-// app.js
+## start
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Button } from 'react-weui';
-//import styles
-import 'weui';
-import 'react-weui/build/packages/react-weui.css';
+### 安装
 
-const App = () => <Button>hello wechat</Button>;
+使用npm
 
-ReactDOM.render((
-    <App/>
-), document.getElementById('container'));
-
+```js
+$ npm install react-mobile-ui --save  (推荐)
 ```
 
-## API
+也可以将[github](https://github.com/shengKevin/react-mobile-ui)上的build/dist/react-mobile.js或/react-mobile.min.js文件下载再来使用
 
-| Feature   | Support |
-| --------- | ------- |
-| tables    | ✔ |
-| alignment | ✔ |
-| wewt      | ✔ |
+### 示例
 
-Properties | Descrition | Type | Default
------------|------------|------|--------
-| type     | can be set to `primary`/`ghost`/`warning` or omitted  |   string   |   -  |
-| size     | can be set to `large`、`small` or omitted | string | `large`|
-| activeStyle | the feedback's custom style (set to false to disable click feedback) | {}/false | {} |
-| activeClassName  | the feedback's custom class name | string |  |
-| disabled   | set disabled   | boolean |  false  |
-| onClick    | set the handler to handle `click` event | (e: Object): void |  -  |
-| style    | custom style |   Object  | - |
-| inline     | whether set as an inline button  | boolean |   false  |
-| loading	   | whether set loading state  | boolean	 | false |
-| icon  | can be set to one type value of the [Icon Component](https://mobile.ant.design/components/icon) or any valid React.Element. (Note: It will be overwritten by the `loading` setting) | `string`/`React.Element` | -  |
-| prefixCls |  prefix class | string | `am-button` |
-| className |  class name | string | '' |
+```js
+    import { DatePicker } from 'react-mobile-ui';
+    ReactDOM.render(<DatePicker />, mountNode);
+```
+
+样式: 当前并没有分离css, 想分离的同学可以clone项目修改webpack.config.lib.js(打开相关注释即可)
+重新build lib
+
+```js
+const plugins = [
+  ...  
+  // new ExtractTextWebpackPlugin('react-mobile-ui.css')
+];
+
+// Rules
+const rules = [{
+    test: /\.css/,
+    // use: ExtractTextWebpackPlugin.extract({
+    //   fallback: 'style-loader',
+    use: [
+      ...
+      ]
+    // })
+  }, {
+    test: /\.less$/,
+    exclude: /node_modules/,
+    // use: ExtractTextWebpackPlugin.extract({
+    //   fallback: '',
+    use: [
+      ...
+    ]
+    // })
+  },
+```
+
+### 按需加载
+
+下面两种方式都可以只加载用到的组件。
+使用 [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-import)（推荐）
+
+```js
+// .babelrc or babel-loader option
+{
+  "plugins": [
+    ["import", {
+      "libraryName": "react-mobile-ui",
+      "libraryDirectory": "lib",
+    }]
+  ]
+}
+```
+
+然后 import { DatePicker } from 'react-mobile-ui';会帮助你按需加载
+
+手动引入
+
+```js
+ import { DatePicker } from 'react-mobile-ui/build/lib/Picker';
+```

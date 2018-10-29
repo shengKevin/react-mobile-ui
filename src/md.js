@@ -13,6 +13,10 @@ import SwitchDocs from './components/switch/index.md';
 import RadioDocs from './components/Radio/index.md';
 import AccordionDocs from './components/Accordion/index.md';
 import IconDocs from './components/Icon/index.md';
+import TagDocs from './components/Tag/index.md';
+import ToptipsDocs from './components/Toptips/index.md';
+import ToastDocs from './components/Toast/index.md';
+
 
 export {
   ButtonDocs,
@@ -30,4 +34,7 @@ export {
   LabelDocs,
   AccordionDocs,
   IconDocs,
+  TagDocs,
+  ToptipsDocs,
+  ToastDocs,
 };

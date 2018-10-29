@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Space, Modal } from 'react-mui';
+import { Button, Space, Modal } from 'react-mobile-ui';
 
 export default class ModalDemo extends React.PureComponent {
 

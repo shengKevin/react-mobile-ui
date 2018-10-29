@@ -4,11 +4,11 @@ Web mobile components with react
 
 ## Doc
 
-Please read the [documentation](https://shengkevin.github.io/react-mui/docs/index.html)
+Please read the [documentation](https://shengkevin.github.io/react-mobile-ui/docs/index.html)
 
 ## Demo
 
-Please look at the [demo](https://shengkevin.github.io/react-mui/example/index.html)
+Please look at the [demo](https://shengkevin.github.io/react-mobile-ui/example/index.html)
 
 ## Installing
 
@@ -21,9 +21,9 @@ npm install react-mobile-ui --save-dev
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'react-mui';
+import { Button } from 'react-mobile-ui';
 
-const App = () => <Button>hello react-mui</Button>;
+const App = () => <Button>hello react-mobile-ui</Button>;
 
 ReactDOM.render((
     <App/>
@@ -33,14 +33,14 @@ ReactDOM.render((
 
 ## Bug
 
-Please commit [issues](https://github.com/shengKevin/react-mui/issues)
+Please commit [issues](https://github.com/shengKevin/react-mobile-ui/issues)
 
 ## Development
 
 ```js
 
-  git clone https://github.com/shengKevin/react-mui.git
-  cd react-mui
+  git clone https://github.com/shengKevin/react-mobile-ui.git
+  cd react-mobile-ui
   // docs
     npm run build:lib
 

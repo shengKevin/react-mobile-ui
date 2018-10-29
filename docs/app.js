@@ -6,6 +6,7 @@ import 'babel-polyfill';
 import Layout from './components/Layout';
 import CodeBlock from './code-block';
 import './app.css';
+import start from './docs.md';
 import {
   ButtonDocs,
   CellDocs,
@@ -20,6 +21,9 @@ import {
   RadioDocs,
   AccordionDocs,
   IconDocs,
+  ToastDocs,
+  ToptipsDocs,
+  TagDocs,
 } from '../src/md.js';
 
 const ReactMarkdown = (md) => {
@@ -27,7 +31,7 @@ const ReactMarkdown = (md) => {
   const mdTitle = md.match(/##\s\S*/g);
   const str = mdTitle[0] || '';
   const title = str.replace('##', '').trim();
-  const source = `https://shengkevin.github.io/react-mui/example/index.html#/${title}`;
+  const source = `https://shengkevin.github.io/react-mobile-ui/example/index.html#/${title}`;
   const introduce = md.split('## code')[0];
   const api = md.match(/## API[\s\S]*/)[0];
   const code = md.replace(api, '').replace(introduce, '').replace('## code', '');
@@ -51,8 +55,14 @@ const ReactMarkdown = (md) => {
     </Layout>);
 };
 
+const startMarkdown = (md) => {
+  return () => (
+    <Layout routers={routers}> <Markdown source={md} renderers={{code: CodeBlock}} /></Layout>
+  );
+};
+
 const routers = [
-  {path: '/start', component: ReactMarkdown(''), exact: true},
+  {path: '/start', component: startMarkdown(start), exact: true},
   {path: '/button', component: ReactMarkdown(ButtonDocs)},
   {path: '/cell', component: ReactMarkdown(CellDocs)},
   {path: '/blank', component: ReactMarkdown(BlankDocs)},
@@ -70,6 +80,10 @@ const routers = [
   {path: '/radio', component: ReactMarkdown(RadioDocs)},
   {path: '/accordion', component: ReactMarkdown(AccordionDocs)},
   {path: '/icon', component: ReactMarkdown(IconDocs)},
+  {path: '/toast', component: ReactMarkdown(ToastDocs)},
+  {path: '/toptips', component: ReactMarkdown(ToptipsDocs)},
+  {path: '/tag', component: ReactMarkdown(TagDocs)},
+
 ];
 
 class App extends React.Component {

@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Radio, Cell } from 'react-mui';
+import { Radio, Cell } from 'react-mobile-ui';
 
 class RadioDemo extends React.PureComponent {
 

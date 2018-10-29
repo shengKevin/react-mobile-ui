@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Cell, CellHeader, CellBody, CellFooter } from 'react-mui';
+import { Button, Cell, CellHeader, CellBody, CellFooter } from 'react-mobile-ui';
 
 const App = () => (
   <Cell>

@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Switch } from 'react-mui';
+import { Switch } from 'react-mobile-ui';
 
 const App = () => <Switch defaultChecked="checked" />;
 ReactDOM.render((

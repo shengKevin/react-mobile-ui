@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Accordion } from 'react-mui';
+import { Accordion } from 'react-mobile-ui';
 
 class AccordionDemo extends React.PureComponent {
 

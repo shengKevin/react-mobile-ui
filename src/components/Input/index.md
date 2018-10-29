@@ -18,7 +18,7 @@ import {
   Space,
   Label,
   Input
-} from 'react-mui';
+} from 'react-mobile-ui';
 
 export default class InputDemo extends React.PureComponent {
 

@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Picker, CascadePicker, DatePicker } from 'react-mui';
+import { Picker, CascadePicker, DatePicker } from 'react-mobile-ui';
 import data from '../../static/cnCity';
 // data 格式
 // const data = [

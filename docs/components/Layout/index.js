@@ -27,7 +27,7 @@ class Layout extends React.Component {
     const { path } = this.props.match;
     return (
       <div className="layout" {...others}>
-        <Cell style={{background: '#FF5A10', color: '#fff'}}><CellBody>react-mui docs</CellBody></Cell>
+        <Cell style={{background: '#FF5A10', color: '#fff'}}><CellBody>react-mobile-ui docs</CellBody></Cell>
         <div className="container">
           <Menu selectedKeys={[path]} onClick={this.handleMenuChange} style={{background: '#f5f5f5'}}>
             {this.renderMenuItem()}

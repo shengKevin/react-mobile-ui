@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Space, Toast } from 'react-mui';
+import { Button, Space, Toast } from 'react-mobile-ui';
 
 class ToastDemo extends React.PureComponent {
 

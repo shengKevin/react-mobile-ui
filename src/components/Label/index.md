@@ -9,9 +9,9 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'react-mui';
+import { Button } from 'react-mobile-ui';
 
-const App = () => <Button>hello react-mui</Button>;
+const App = () => <Button>hello react-mobile-ui</Button>;
 
 ReactDOM.render((
     <App/>

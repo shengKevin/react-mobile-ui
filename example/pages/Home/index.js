@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../../build/dist/verdor';
-import { Accordion, Cell } from '../../../build/dist/react-mui.min.js';
+// import '../../../build/dist/verdor';
+import { Accordion, Cell } from '../../../build/dist/react-mobile-ui.min.js';
 import Header from '../../components/Header/index.jsx';
 
 

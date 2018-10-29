@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Blank, Space, Flex, FlexItem, Switch } from 'react-mui';
+import { Blank, Space, Flex, FlexItem, Switch } from 'react-mobile-ui';
 
 export default class FlexDemo extends React.PureComponent {
 

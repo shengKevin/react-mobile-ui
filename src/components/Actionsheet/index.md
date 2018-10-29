@@ -9,7 +9,7 @@ ios弹出效果
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ActionSheet, Button } from 'react-mui';
+import { ActionSheet, Button } from 'react-mobile-ui';
 
 class ActionSheetDemo extends React.PureComponent {
 
