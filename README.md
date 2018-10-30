@@ -40,7 +40,7 @@ Please commit [issues](https://github.com/shengKevin/react-mobile-ui/issues)
 ```js
 
   git clone https://github.com/shengKevin/react-mobile-ui.git
-  cd react-mobile-ui
+  cd react-mobile-ui && npm i
   // docs
     npm run build:lib
 
