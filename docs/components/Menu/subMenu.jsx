@@ -1,6 +1,5 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { Icon } from '../../../src/components/Icon';
 import Item from './item.jsx';
 // import './index.less';
 import './index.css';

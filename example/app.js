@@ -26,6 +26,7 @@ import {
   ToastDemo,
   ToptipsDemo,
   TagDemo,
+  StepsDemo,
 } from './pages';
 import './app.css';
 
@@ -52,7 +53,7 @@ const routers = [
   {path: '/toast', component: ToastDemo},
   {path: '/toptips', component: ToptipsDemo},
   {path: '/tag', component: TagDemo},
-
+  {path: '/steps', component: StepsDemo},
 ];
 
 class App extends React.Component {

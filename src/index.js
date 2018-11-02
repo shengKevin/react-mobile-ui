@@ -14,6 +14,12 @@ import { Switch } from './components/switch';
 import { Radio } from './components/Radio';
 import { Accordion } from './components/Accordion';
 import { Icon } from './components/Icon';
+import { Title } from './components/Title';
+import { Tag } from './components/Tag';
+import { Toptips } from './components/Toptips';
+import { Steps, Step } from './components/Steps';
+import { Toast } from './components/Toast';
+
 
 export default {
   Button,
@@ -42,4 +48,10 @@ export default {
   Label,
   Accordion,
   Icon,
+  Title,
+  Tag,
+  Toptips,
+  Toast,
+  Steps,
+  Step,
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tag } from '../../../src/components/Tag';
+import { Tag } from '../../../build/lib/Tag';
 import { Flex, FlexItem } from '../../../build/lib/Flex';
 import { Space } from '../../../build/lib/Blank';
 

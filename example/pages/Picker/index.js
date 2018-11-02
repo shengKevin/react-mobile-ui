@@ -1,6 +1,6 @@
 import React from 'react';
 import data from '../../static/cnCity';
-import { Picker, CascadePicker, DatePicker } from '../../../src/components/Picker';
+import { Picker, CascadePicker, DatePicker } from '../../../build/lib/Picker';
 
 export default class PickerDemo extends React.PureComponent {
   state = {

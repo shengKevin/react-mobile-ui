@@ -56,6 +56,25 @@ Please commit [issues](https://github.com/shengKevin/react-mobile-ui/issues)
 
 ```
 
+### docs
+
+```js
+start: npm run doc
+
+build: npm run build:doc
+```
+### example 
+
+```js
+start: npm start
+
+build: npm run build 
+```
+### lib
+
+```js
+npm run build:lib
+```
 ## Dir
 
 ```
@@ -87,20 +106,4 @@ Please commit [issues](https://github.com/shengKevin/react-mobile-ui/issues)
 
 
 ```
-
-### docs
-
-start: npm run doc
-
-build: npm run build:doc
-
-### example 
-
-start: npm start
-
-build: npm run build 
-
-### lib
-
-npm run build:lib
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Space } from '../../../build/lib/Blank';
 import { Button } from '../../../build/lib/Button';
-import { Modal } from '../../../src/components/Modal';
+import { Modal } from '../../../build/lib/Modal';
 
 export default class ModalDemo extends React.PureComponent {
 

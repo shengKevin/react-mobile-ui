@@ -1,6 +1,6 @@
 import React from 'react';
 import { Cell } from '../../../build/lib/Cell';
-import { Accordion } from '../../../src/components/Accordion';
+import { Accordion } from '../../../build/lib/Accordion';
 
 export default class AccordionDemo extends React.PureComponent {
 

@@ -9,6 +9,7 @@ import { Space } from '../../../build/lib/Blank';
 import { Button } from '../../../build/lib/Button';
 import { Label } from '../../../build/lib/Label';
 import { Input } from '../../../build/lib/Input';
+import { Title } from '../../../build/lib/Title';
 
 export default class CellDemo extends React.PureComponent {
 
@@ -35,9 +36,9 @@ export default class CellDemo extends React.PureComponent {
           <CellBody>Body</CellBody>
           <CellFooter>Footer</CellFooter>
         </Cell>
-        <Cell>
-          <Label>输入框</Label>
-        </Cell>
+        <Title>
+          输入框
+        </Title>
         <Cell>
           <CellHeader><Label>单位名称</Label></CellHeader>
           <CellBody>

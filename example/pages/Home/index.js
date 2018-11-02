@@ -72,6 +72,9 @@ export default class Home extends React.PureComponent {
             <Cell>
               <Link to="/tag">tag</Link>
             </Cell>
+            <Cell>
+              <Link to="/steps">steps</Link>
+            </Cell>
           </Accordion.Panel>
         </Accordion>
       </div>

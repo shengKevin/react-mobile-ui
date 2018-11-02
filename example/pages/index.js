@@ -15,6 +15,7 @@ import IconDemo from './Icon';
 import ToastDemo from './Toast';
 import ToptipsDemo from './Toptips';
 import TagDemo from './Tag';
+import StepsDemo from './Steps';
 
 export {
   Home,
@@ -34,4 +35,5 @@ export {
   ToastDemo,
   ToptipsDemo,
   TagDemo,
+  StepsDemo,
 };
