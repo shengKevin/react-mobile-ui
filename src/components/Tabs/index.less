@@ -1,0 +1,113 @@
+.mui-tabs {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  &-top {
+    flex-direction: column;
+  }
+  &-left {
+    flex-direction: row;
+  }
+  &-bar-wrap {
+    flex-shrink: 0;
+    background-color: #ffffff;
+    display: flex;
+    overflow: visible;
+    position: relative;
+  }
+  &-bar-wrap-horizontal {
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+  }
+  &-bar-wrap-vertical {
+    flex-direction: column;
+  }
+  &-default-tab {
+    border-bottom: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 15px;
+    position: relative;
+  }
+  &-default-tab-horizontal {
+    padding: 8px 0;
+    height: 43.5px;
+    line-height: 43.5px;    
+  }
+  &-default-tab-vertical {
+    padding: 0 8px;
+  }
+  &-bar-tab-active {
+    color: #FF5A10;
+  }
+
+  &-default-tab::after {
+    content: "";
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    transform-origin: 50% 100%;
+    transform: scaleY(.5);
+  }
+  &-tab-line {
+    position: absolute;
+    border: 1px solid #FF5A10;
+    transform: translateZ(0);
+    display: block;
+  }
+  &-content-wrap {
+    background: #ffffff;
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    left: 0;
+  }
+  &-content-wrap-vertical {
+    flex-direction: column;
+  }
+  &-content-wrap-animation {
+    transition: .3s cubic-bezier(.35,0,.25,1),
+  }
+  &-pane-wrap-horizontal {
+    flex-shrink: 0;
+    width: 100%;
+    overflow-y: auto;
+  }
+  &-pane-wrap-vertical {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+  }
+  &-pane-wrap-active-horizontal {
+    height: auto;
+  }
+  &-pane-wrap-inactive-horizontal {
+    height: 0;
+  }
+  &-pane-wrap-active-vertical {
+    overflow: auto;
+    // height: auto;
+  }
+  &-pane-wrap-inactive-vertical {
+    // height: 0;
+    overflow: hidden;
+  }
+}

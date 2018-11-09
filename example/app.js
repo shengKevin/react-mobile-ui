@@ -27,6 +27,8 @@ import {
   ToptipsDemo,
   TagDemo,
   StepsDemo,
+  SwiperDemo,
+  TabsDemo,
 } from './pages';
 import './app.css';
 
@@ -54,6 +56,8 @@ const routers = [
   {path: '/toptips', component: ToptipsDemo},
   {path: '/tag', component: TagDemo},
   {path: '/steps', component: StepsDemo},
+  {path: '/swiper', component: SwiperDemo},
+  {path: '/tabs', component: TabsDemo},
 ];
 
 class App extends React.Component {

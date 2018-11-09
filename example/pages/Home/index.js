@@ -53,8 +53,14 @@ export default class Home extends React.PureComponent {
             <Cell>
               <Link to="/accordion">accordion</Link>
             </Cell>
+            <Cell>
+              <Link to="/swiper">swiper</Link>
+            </Cell>
           </Accordion.Panel>
           <Accordion.Panel header="Navigation">
+            <Cell>
+              <Link to="/tabs">tabs</Link>
+            </Cell>
           </Accordion.Panel>
           <Accordion.Panel header="Feedback">
             <Cell>
